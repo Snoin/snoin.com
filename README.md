@@ -1,31 +1,56 @@
-# Agency by Start Bootstrap [![Build Status](https://travis-ci.org/IronSummitMedia/startbootstrap-agency.svg?branch=master)](https://travis-ci.org/IronSummitMedia/startbootstrap-agency)
+snoin.com
+=========
 
-Agency is a one page HTML theme for agencies created by Start Bootstrap. This repository is a pre-release that we are using to test integrating themes with Grunt, Bower, and ultimately, creating Yeoman and Brunch scaffolds for all of our open source templates and themes.
+스노인 공식 사이트입니다!
 
-To access the current version of this template, visit http://startbootstrap.com/template-overviews/agency/.
+설치
+---
 
-## Screenshot
-![](http://sbootstrap.startbootstrapc.netdna-cdn.com/assets/img/templates/agency.jpg)
+1. 본 저장소를 clone하세요
 
-## Installation
+    ```
+    $ git clone https://github.com/Snoin/snoin.com.git
+    $ cd snoin.com
+    ```
 
-- Fork the source files from this repository.
-- Run `npm install` in the root directory to install Grunt dependencies.
-- Run `bower install` in the root directory to install Bower dependencies.
+2. Python package를 설치합니다. Python 3.4 이상과 `pip`이 이미 설치되어 있어야 합니다.
 
-You are now ready to work with the theme! Feel free to edit the Gruntfile as you see fit. It's recommended that you have a working knowledge of Grunt and Bower before attempting to use these source files. If you want the easy to use, HTML/CSS version of this template, you can download it at http://startbootstrap.com/template-overviews/agency/.
+    ```
+    $ pip install -e .
+    ```
 
-## Grunt Tasks
+3. npm package를 설치합니다. node.js와 `npm`이 이미 설치되어 있어야 합니다.
 
-- `grunt` will run all Grunt tasks. It will build the dist folder based on the specifications set up in the Gruntfile.
-- `grunt watch` will watch specified files for changes, and automatically build them within the dist folder.
+    ```
+    $ npm install
+    ```
 
-## Support
+4. bower package를 설치합니다 `bower`가 이미 설치되어 있어야 합니다.
 
-If you have questions about the theme you can submit an issue here on GitHub or you can leave a comment on the theme overview page on Start Bootstrap at http://startbootstrap.com/template-overviews/agency/.
+    ```
+    $ bower install
+    ```
 
-## Contributing
+빌드 (grunt)
+-----------
 
-If you have fixed a bug with the template feel free to open a pull request and I will review and merge the request.
+빌드를 위해서는 `grunt`가 이미 설치되어 있어야 합니다.
 
-*NOTE: Pull requests with new features will most likely not be added to the base theme! The templates and themes on Start Bootstrap are meant to be starting points for people to work off of, and I don't typically add any new feature unless they are frequently asked for.*
+```
+$ grunt
+```
+
+만약 개발중이라면 watch를 사용해보세요.
+
+```
+$ grunt watch
+```
+
+개발 서버
+-------
+
+다음 명령어를 실행해보세요.
+
+```
+$ snoin-web runserver
+```
