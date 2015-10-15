@@ -1,6 +1,8 @@
 node_modules
 bower_components
 
+snoin/app/static
+
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
