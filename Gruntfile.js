@@ -1,5 +1,6 @@
 var src = 'static_src/';
-var dist = 'snoin/app/static/';
+var web = 'snoin/web/';
+var dist = web + 'static/';
 var css = {};
 css[dist + 'css/<%= pkg.name %>.css'] = dist + 'less/<%= pkg.name %>.less';
 var css_min = {};
@@ -33,6 +34,12 @@ module.exports = function(grunt) {
             cwd: src,
             src: ['*.html', 'img/**', 'less/**'],
             dest: dist
+          },
+          {
+            expand: true,
+            cwd: src,
+            src: ['templates/**'],
+            dest: web
           }
         ]
       },
