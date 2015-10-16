@@ -1,27 +1,19 @@
-@import "variables.less";
-@import "mixins.less";
-
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
-@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic');
-@import url('http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700');
-@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-// Global Components
+@import "import";
+@import "mixins";
+@import "variables";
 
 body {
   overflow-x: hidden;
   position: relative;
-  .body-font;
+  @include body-font();
 }
 
 .text-muted {
-  color: @gray;
+  color: $gray;
 }
 
 .text-primary {
-  color: @brand-primary;
+  color: $brand-primary;
 }
 
 p {
@@ -42,18 +34,18 @@ a.active {
 }
 
 a {
-  color: @brand-primary;
+  color: $brand-primary;
 }
 
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: darken(@brand-primary, 10%);
+  color: darken($brand-primary, 10%);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  .heading-font;
+  @include heading-font();
   font-weight: 700;
 }
 
@@ -62,24 +54,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-light-gray {
-  background-color: @gray-lighter;
+  background-color: $gray-lighter;
 }
 
 .bg-darkest-gray {
-  background-color: @gray-darkest;
+  background-color: $gray-darkest;
 }
 
 // Restyled Primary Buttons
 
 .btn-primary {
-  .button-variant(white; @brand-primary; @brand-primary);
-  .heading-font;
+  @include button-variant(white, $brand-primary, $brand-primary);
+  @include heading-font();
   font-weight: 700;
 }
 
 .btn-xl {
-  .button-variant(white; @brand-primary; @brand-primary);
-  .heading-font;
+  @include button-variant(white, $brand-primary, $brand-primary);
+  @include heading-font();
   font-weight: 700;
   border-radius: 3px;
   font-size: 18px;
@@ -89,42 +81,42 @@ h1, h2, h3, h4, h5, h6 {
 // Custom Navigation Bar
 
 .navbar-default {
-  background-color: @gray-darkest;
+  background-color: $gray-darkest;
   border-color: transparent;
   .navbar-brand {
-    color: @brand-primary;
-    .script-font;
+    color: $brand-primary;
+    @include script-font();
     &:hover,
     &:focus,
     &:active,
     &.active {
-      color: darken(@brand-primary, 10%);
+      color: darken($brand-primary, 10%);
     }
   }
   .navbar-collapse {
-    border-color: fade(white, 2%);
+    border-color: opacify(white, 0.02);
   }
   .navbar-toggle {
-    background-color: @brand-primary;
-    border-color: @brand-primary;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
     .icon-bar {
       background-color: white;
     }
     &:hover,
     &:focus {
-      background-color: @brand-primary;
+      background-color: $brand-primary;
     }
   }
   .nav {
     li {
       a {
-        .heading-font;
+        @include heading-font();
         font-weight: 400;
         letter-spacing: 1px;
         color: white;
         &:hover,
         &:focus {
-          color: @brand-primary;
+          color: $brand-primary;
           outline: none;
         }
       }
@@ -133,12 +125,12 @@ h1, h2, h3, h4, h5, h6 {
   .navbar-nav>.active>a {
     border-radius: 0;
     color: white;
-    background-color: @brand-primary;
+    background-color: $brand-primary;
   }
   .navbar-nav>.active>a:hover,
   .navbar-nav>.active>a:focus {
     color: white;
-    background-color: darken(@brand-primary, 10%);
+    background-color: darken($brand-primary, 10%);
   }
 }
 
@@ -161,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
   .navbar-default.navbar-shrink {
-    background-color: @gray-darkest;
+    background-color: $gray-darkest;
     padding: 10px 0;
     .navbar-brand {
       font-size: 1.5em;
@@ -170,24 +162,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-  background-image: url('../img/header-bg.jpg');
+  background-image: url('../images/header-bg.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  .background-cover;
+  @include background-cover();
   text-align: center;
   color: white;
   .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
     .intro-lead-in {
-      .serif-font;
+      @include serif-font();
       font-size: 22px;
       line-height: 22px;
       margin-bottom: 25px;
     }
     .intro-heading {
-      .script-font;
+      @include script-font();
       font-weight: 700;
       font-size: 50px;
       line-height: 50px;
@@ -227,7 +219,7 @@ section {
   }
   h3.section-subheading {
     font-size: 16px;
-    .serif-font;
+    @include serif-font();
     text-transform: none;
     font-style: italic;
     font-weight: 400;
@@ -260,7 +252,7 @@ section {
       max-width: 400px;
       margin: 0 auto;
       .portfolio-hover {
-        background: fade(@brand-primary, 90%);
+        background: opacify($brand-primary, 0.9);
         position: absolute;
         width: 100%;
         height: 100%;
@@ -301,7 +293,7 @@ section {
         margin: 0;
       }
       p {
-        .serif-font;
+        @include serif-font();
         font-style: italic;
         font-size: 16px;
         margin: 0;
@@ -375,7 +367,7 @@ section {
       height: 80px;
       position: absolute;
       z-index: 100;
-      background-color: @brand-primary;
+      background-color: $brand-primary;
       color: white;
       border-radius: 100%;
       border: 7px solid #f1f1f1;
@@ -534,8 +526,8 @@ aside.clients {
 // Contact Section
 
 section#contact {
-  background-color: @gray-darkest;
-  background-image: url('../img/map-image.png');
+  background-color: $gray-darkest;
+  background-image: url('../images/map-image.png');
   background-position: center;
   background-repeat: no-repeat;
   .section-heading {
@@ -555,31 +547,31 @@ section#contact {
     }
   }
   .form-control:focus {
-    border-color: @brand-primary;
+    border-color: $brand-primary;
     box-shadow: none;
   }
   ::-webkit-input-placeholder {
-    .heading-font;
+    @include heading-font();
     font-weight: 700;
-    color: @placeholder-text;
+    color: $placeholder-text;
   }
   :-moz-placeholder { /* Firefox 18- */
-    .heading-font;
+    @include heading-font();
     font-weight: 700;
-    color: @placeholder-text;
+    color: $placeholder-text;
   }
   ::-moz-placeholder {  /* Firefox 19+ */
-    .heading-font;
+    @include heading-font();
     font-weight: 700;
-    color: @placeholder-text;
+    color: $placeholder-text;
   }
   :-ms-input-placeholder {
-    .heading-font;
+    @include heading-font();
     font-weight: 700;
-    color: @placeholder-text;
+    color: $placeholder-text;
   }
   .text-danger {
-    color: @brand-danger;
+    color: $brand-danger;
   }
 }
 
@@ -590,13 +582,13 @@ footer {
   text-align: center;
   span.copyright {
     line-height: 40px;
-    .heading-font;
+    @include heading-font();
     text-transform: none;
   }
   ul.quicklinks {
     margin-bottom: 0;
     line-height: 40px;
-    .heading-font;
+    @include heading-font();
     text-transform: none;
   }
 }
@@ -608,7 +600,7 @@ ul.social-buttons {
   li {
     a {
       display: block;
-      background-color: @gray-darkest;
+      background-color: $gray-darkest;
       height: 40px;
       width: 40px;
       border-radius: 100%;
@@ -622,7 +614,7 @@ ul.social-buttons {
       &:hover,
       &:focus,
       &:active {
-        background-color: @brand-primary;
+        background-color: $brand-primary;
       }
     }
   }
@@ -654,7 +646,7 @@ ul.social-buttons {
     }
     p.item-intro {
       margin: 20px 0 30px;
-      .serif-font;
+      @include serif-font();
       font-style: italic;
       font-size: 16px;
     }
@@ -681,7 +673,7 @@ ul.social-buttons {
       height:75px;
       width:1px;
       margin-left:35px;
-      background-color:@gray-darkest;
+      background-color:$gray-darkest;
       transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       /* IE 9 */
@@ -691,7 +683,7 @@ ul.social-buttons {
       .rl {
         height:75px;
         width:1px;
-        background-color:@gray-darkest;
+        background-color:$gray-darkest;
         transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         /* IE 9 */
@@ -707,12 +699,12 @@ ul.social-buttons {
 
 ::-moz-selection {
   text-shadow: none;
-  background: @brand-primary;
+  background: $brand-primary;
 }
 
 ::selection {
   text-shadow: none;
-  background: @brand-primary;
+  background: $brand-primary;
 }
 
 img::selection {
@@ -724,5 +716,5 @@ img::-moz-selection {
 }
 
 body {
-  webkit-tap-highlight-color: @brand-primary;
+  webkit-tap-highlight-color: $brand-primary;
 }
