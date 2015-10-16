@@ -135,7 +135,7 @@ module.exports = function(grunt) {
       },
       copy: {
         files: [
-          src + '*.html',
+          src + 'templates/**',
           src + 'img/**',
           src + 'less/**'
         ],
