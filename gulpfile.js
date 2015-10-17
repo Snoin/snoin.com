@@ -91,6 +91,5 @@ gulp.task('default', function(cb) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(js, ['js']);
-  gulp.watch(scss, ['scss']);
+  return gulp.watch([path.dst + '**/*.js', path.dst + '**/*.scss'], ['default']);
 });
