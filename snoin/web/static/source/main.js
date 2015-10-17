@@ -2,11 +2,11 @@
 $(document).ready(function() {
   // Highlight the top nav as scrolling occurs
   $('body').scrollspy({
-    target: '.navbar-fixed-top'
+    target: '#menu'
   });
 
   var scrollTop = $(window).scrollTop();
-  var navbar = $('.navbar-fixed-top');
+  var navbar = $('#menu');
   if (scrollTop >= navbar.outerHeight()) {
     navbar.addClass('navbar-shrink');
   }
