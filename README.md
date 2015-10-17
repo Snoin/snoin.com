@@ -31,19 +31,17 @@ snoin.com
     $ bower install
     ```
 
-빌드 (grunt)
------------
-
-빌드를 위해서는 `grunt`가 이미 설치되어 있어야 합니다.
+빌드
+---
 
 ```
-$ grunt
+$ npm run build
 ```
 
 만약 개발중이라면 watch를 사용해보세요.
 
 ```
-$ grunt watch
+$ npm run watch
 ```
 
 개발 서버
