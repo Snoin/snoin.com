@@ -30,6 +30,14 @@ gulp.task('copy_js', function() {
     {
       src: path.node + 'bootstrap-sass/assets/javascripts/bootstrap.js',
       dest: path.dst + 'source/vendors/'
+    },
+    {
+      src: path.node + 'html5shiv/dist/*.min.js',
+      dest: path.dst + 'js/'
+    },
+    {
+      src: path.node + 'respond.js/dest/*.min.js',
+      dest: path.dst + 'js/'
     }
   ]);
 });
