@@ -746,8 +746,10 @@ section {
             @extend .img-responsive;
             @extend .img-circle;
 
-            margin: 0 auto;
             border: 7px solid white;
+            height: 265px;
+            margin: 0 auto;
+            width: 265px;
           }
 
           h4 {
