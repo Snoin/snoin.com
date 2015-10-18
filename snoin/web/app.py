@@ -26,6 +26,6 @@ def template_processor():
                 data['entry'][0]['hash']
             )
             cache.set(username, url)
-            return url
+        return url
 
     return dict(get_gravatar_image=get_gravatar_image)
