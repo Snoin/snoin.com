@@ -1,3 +1,4 @@
+import functools
 import json
 
 from flask import Flask, render_template
@@ -15,6 +16,7 @@ def index():
 
 @app.context_processor
 def template_processor():
+    @functools.lru_cache(maxsize=10)
     def get_gravatar_image(username: str) -> str:
         raw = get('http://en.gravatar.com/{}.json'.format(username)).text
         data = json.loads(raw)
