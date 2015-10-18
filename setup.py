@@ -5,6 +5,8 @@ install_requires = {
     'Flask >= 0.10.1',
     # CLI
     'Click >= 5.1',
+    # API
+    'requests >= 2.8.1',
 }
 
 setup(
