@@ -32,6 +32,10 @@ gulp.task('copy_js', function() {
       dest: path.dst + 'source/vendors/'
     },
     {
+      src: path.node + 'jquery-easing/jquery.easing.1.3.js',
+      dest: path.dst + 'source/vendors/'
+    },
+    {
       src: path.node + 'html5shiv/dist/*.min.js',
       dest: path.dst + 'js/'
     },
