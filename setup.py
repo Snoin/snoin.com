@@ -7,6 +7,8 @@ install_requires = {
     'Click >= 5.1',
     # API
     'requests >= 2.8.1',
+    # Deploy
+    'uwsgi >= 2.0.11.2',
 }
 
 setup(
