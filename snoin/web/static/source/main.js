@@ -1,26 +1,54 @@
-// jQuery for page scrolling feature - requires jQuery Easing plugin
 $(document).ready(function() {
-  // Highlight the top nav as scrolling occurs
-  $('body').scrollspy({
-    target: '#menu'
-  });
+  var $navbar = $('#menu');
 
-  var scrollTop = $(window).scrollTop();
-  var navbar = $('#menu');
-  if (scrollTop >= navbar.outerHeight()) {
-    navbar.addClass('navbar-shrink');
-  }
+  (function() {
+    var docElem = document.documentElement,
+      didScroll = false,
+      changeHeaderOn = 300;
 
-  $('a.page-scroll').bind('click', function(event) {
-    var $anchor = $(this);
+    function init() {
+      $(window).on('scroll', function() {
+        if(!didScroll) {
+          didScroll = true;
+          setTimeout(scrollPage, 250);
+        }
+      });
+    }
+
+    function scrollPage() {
+      var sy = scrollY();
+      if (sy >= changeHeaderOn) {
+        $navbar.addClass('navbar-shrink');
+      } else {
+        $navbar.removeClass('navbar-shrink');
+      }
+      didScroll = false;
+    }
+
+    function scrollY() {
+      return window.pageYOffset || docElem.scrollTop;
+    }
+
+    init();
+    scrollPage();
+
+    $('body').scrollspy({
+      target: '#menu'
+    });
+  })();
+
+  $('a.page-scroll').click(function(event) {
+    var $this = $(this);
     $('html, body').stop().animate({
-      scrollTop: $($anchor.attr('href')).offset().top
+      scrollTop: $($this.attr('href')).offset().top
     }, 1500, 'easeInOutExpo');
+    location.hash = $this.attr('href');
     event.preventDefault();
   });
 
-// Closes the Responsive Menu on Menu Item Click
-  $('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
+  $('nav ul li a', $navbar).click(function() {
+    $('nav', $navbar)
+      .attr('aria-expended', 'false')
+      .removeClass('collapse in');
   });
 });
