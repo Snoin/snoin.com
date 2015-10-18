@@ -25,7 +25,7 @@ def template_processor():
             url = 'https://secure.gravatar.com/avatar/{}?size=265'.format(
                 data['entry'][0]['hash']
             )
-            cache.set(username, url)
+            cache.set(username, url, timeout=1*60*60)
         return url
 
     return dict(get_gravatar_image=get_gravatar_image)
