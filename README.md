@@ -6,7 +6,7 @@ snoin.com
 설치
 ---
 
-1. 본 저장소를 clone하세요
+1. 본 저장소를 clone 하세요.
 
     ```
     $ git clone https://github.com/Snoin/snoin.com.git
@@ -23,12 +23,6 @@ snoin.com
 
     ```
     $ npm install
-    ```
-
-4. bower package를 설치합니다 `bower`가 이미 설치되어 있어야 합니다.
-
-    ```
-    $ bower install
     ```
 
 빌드
