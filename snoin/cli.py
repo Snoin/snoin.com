@@ -1,6 +1,27 @@
-from click import group, option
+import functools
+import pathlib
 
+from click import Path, echo, group, option
+
+from .config import load
 from .web.app import app
+
+
+def load_config(func):
+    @functools.wraps(func)
+    def internal(*args, **kwargs):
+        filename = kwargs.pop('config')
+        if filename is None:
+            echo('--config 옵션을 주셔야 합니다.', err=True)
+            raise SystemError(1)
+
+        config = load(pathlib.Path(filename))
+        app.config.update(config)
+        return func(*args, **kwargs)
+
+    decorator = option('--config', '-c', type=Path(exists=True))
+
+    return decorator(internal)
 
 
 @group()
@@ -16,6 +37,7 @@ def cli():
 @option('--passthrough-errors', is_flag=True)
 @option('--debug/--no-debug', '-d/-D', default=None)
 @option('--reload/--no-reload', '-r/-R', default=None)
+@load_config
 def runserver(host, port, threaded, processes,
               passthrough_errors, debug, reload):
     if debug is None:

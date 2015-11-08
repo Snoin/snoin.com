@@ -71,3 +71,8 @@ target/
 ## intellij
 .idea
 *.iml
+
+
+## config
+
+*.cfg.py
