@@ -9,11 +9,16 @@ install_requires = {
     'requests >= 2.8.1',
 }
 
+tests_require = {
+    'pytest >= 2.8.2',
+}
+
 extras_require = {
     "deploy": [
         # Deploy
         'uwsgi >= 2.0.11.2',
     ],
+    'tests': tests_require,
 }
 
 setup(
@@ -23,6 +28,7 @@ setup(
     url='http://snoin.com',
     packages=find_packages(),
     install_requires=install_requires,
+    tests_require=tests_require,
     extras_require=extras_require,
     entry_points={
         'console_scripts': [
