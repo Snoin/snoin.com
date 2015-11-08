@@ -38,11 +38,17 @@ $ npm run build
 $ npm run watch
 ```
 
+설정 파일
+-------
+
+환경 설정 파일은 `.py` 확장자로 구성되어야 합니다.
+파일의 내용은 `cfg.py.example.py` 파일을 참고해주세요.
+
 개발 서버
 -------
 
 다음 명령어를 실행해보세요.
 
 ```
-$ snoin-web runserver
+$ snoin-web runserver -c 설정파일
 ```
