@@ -52,3 +52,19 @@ $ npm run watch
 ```
 $ snoin-web runserver -c 설정파일
 ```
+
+서버 테스트
+---------
+
+서버 테스트는 py.test를 사용합니다.
+개발환경용 설치가 추가로 필요합니다.
+
+```
+$ pip install -e .[tests]
+```
+
+테스트 파일은 `tests`에 있으므로 다음과 같이 명령을 실행하면 됩니다.
+
+```
+$ py.test tests
+```
