@@ -1,21 +1,22 @@
 import pathlib
+import runpy
 import sys
 
+def error(msgfmt, *args):
+    msg = msgfmt.format(*args)
+    print(msg, file=sys.stderr)
+    raise SystemError(1)
 
 def load(file: pathlib.Path) -> dict:
     if not file.exists():
-        print('존재하지 않는 파일', file=sys.stderr)
-        raise SystemError(1)
+        error('존재하지 않는 파일')
     if not file.is_file():
-        print('파일이 아님', file=sys.stderr)
-        raise SystemError(1)
+        error('파일이 아님')
     if file.suffix != '.py':
-        print('python 파일만 처리 가능', file=sys.stderr)
-        raise SystemError(1)
+        error('python 파일만 처리 가능')
 
-    config = {}
-
-    with file.open() as f:
-        exec(compile(f.read(), file.name, 'exec'), config)
+    config = runpy.run_path(file.name, run_name="<snoin.config>")
+    if not config.get("SNOIN_CONFIG"):
+        error('snoin config 파일만 처리 가능 (SNOIN_CONFIG is unset)')
 
     return config

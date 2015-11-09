@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
 import email.headerregistry
+
+SNOIN_CONFIG = True
 
 SMTP_ID = 'GMAIL ID'
 SMTP_PASSWORD = 'SUPER SECRET'
