@@ -1,6 +1,6 @@
 import pathlib
-import sys
 import runpy
+import sys
 
 def error(msgfmt, *args):
     msg = msgfmt.format(*args)
