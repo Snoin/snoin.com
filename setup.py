@@ -7,8 +7,13 @@ install_requires = {
     'Click >= 5.1',
     # API
     'requests >= 2.8.1',
-    # Deploy
-    'uwsgi >= 2.0.11.2',
+}
+
+extras_require = {
+    "deploy": [
+        # Deploy
+        'uwsgi >= 2.0.11.2',
+    ],
 }
 
 setup(
@@ -18,6 +23,7 @@ setup(
     url='http://snoin.com',
     packages=find_packages(),
     install_requires=install_requires,
+    extras_require=extras_require,
     entry_points={
         'console_scripts': [
             'snoin-web=snoin.cli:main',
