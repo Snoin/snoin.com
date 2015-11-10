@@ -1,0 +1,13 @@
+language: python
+python:
+- 3.5
+install:
+- pip install -e .[tests]
+script:
+- py.test tests
+notifications:
+  irc:
+    channels:
+    - "irc.ozinger.org#snoin-dev"
+    on_success: change
+    on_failure: always
