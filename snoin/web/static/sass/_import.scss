@@ -3,5 +3,39 @@
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
-@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-@import url(https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  src: url('../fonts/nanummyeongjo-webfont.eot');
+  src: url('../fonts/nanummyeongjo-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/nanummyeongjo-webfont.woff2') format('woff2'),
+  url('../fonts/nanummyeongjo-webfont.woff') format('woff'),
+  url('../fonts/nanummyeongjo-webfont.ttf') format('truetype'),
+  url('../fonts/nanummyeongjo-webfont.svg#nanummyeongjootfregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nanum Barun Gothic';
+  src: url('../fonts/nanumbarungothic-webfont.eot');
+  src: url('../fonts/nanumbarungothic-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/nanumbarungothic-webfont.woff2') format('woff2'),
+  url('../fonts/nanumbarungothic-webfont.woff') format('woff'),
+  url('../fonts/nanumbarungothic-webfont.ttf') format('truetype'),
+  url('../fonts/nanumbarungothic-webfont.svg#nanumbarungothicotfregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nanum Pen Script';
+  src: url('../fonts/nanumpen-webfont.eot');
+  src: url('../fonts/nanumpen-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/nanumpen-webfont.woff2') format('woff2'),
+  url('../fonts/nanumpen-webfont.woff') format('woff'),
+  url('../fonts/nanumpen-webfont.ttf') format('truetype'),
+  url('../fonts/nanumpen-webfont.svg#nanum_pen_script_otfregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

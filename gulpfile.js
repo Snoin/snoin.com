@@ -68,6 +68,10 @@ gulp.task('copy_etc', function() {
     {
       src: path.node + 'font-awesome/fonts/*',
       dest: path.dst + 'fonts/'
+    },
+    {
+      src: 'fonts/*',
+      dest: path.dst + 'fonts/'
     }
   ]);
 });
