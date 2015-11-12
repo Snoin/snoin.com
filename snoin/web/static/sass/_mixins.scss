@@ -7,11 +7,11 @@
 }
 
 @mixin body-font() {
-  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto Slab", 'Nanum Barun Gothic', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 @mixin heading-font() {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", 'Nanum Barun Gothic', "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 
