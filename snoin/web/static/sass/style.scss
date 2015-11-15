@@ -418,6 +418,21 @@ section {
             @extend .fa-html5;
           }
         }
+        span.security {
+          > i:last-child {
+            @extend .fa-lock;
+          }
+        }
+        span.quality {
+          > i:last-child {
+            @extend .fa-thumbs-o-up;
+          }
+        }
+        span.optimize {
+          > i:last-child {
+            @extend .fa-comments;
+          }
+        }
         h4 {
           margin: 15px 0;
           text-transform: none;
