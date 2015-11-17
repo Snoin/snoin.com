@@ -13,12 +13,17 @@ tests_require = {
     'pytest >= 2.8.2',
 }
 
+webscr_require = {
+    'pycloudinary >= 1.2.0',
+}
+
 extras_require = {
     "deploy": [
         # Deploy
         'uwsgi >= 2.0.11.2',
     ],
     'tests': tests_require,
+    'webscr': webscr_require,
 }
 
 setup(

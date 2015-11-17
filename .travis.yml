@@ -3,8 +3,11 @@ python:
 - 3.5
 install:
 - pip install -e .[tests]
+- pip install -e .[webscr]
 script:
 - py.test tests
+after_success:
+- python powebscr.py
 notifications:
   irc:
     channels:
