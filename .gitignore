@@ -76,3 +76,6 @@ target/
 ## config
 
 *.cfg.py
+
+## gedit backup file
+*~
