@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 "Powerful Web Screenshot"
-import os
 import json
+import os
 import subprocess
 import sys
 import tempfile
