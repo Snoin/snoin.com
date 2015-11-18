@@ -43,7 +43,7 @@ def main():
         # wait for starting web server
         time.sleep(1)
         if server.poll() is not None:
-            sys.exit("error: starting web server is failed (exitcode = {}".format(server.returncode))
+            sys.exit("error: starting web server is failed (exitcode = {})".format(server.returncode))
             
         # TODO: dynamic viewport support
         # TODO: path is hardcoded.
@@ -64,8 +64,11 @@ def main():
     finally:
         if server:
             server.terminate()
-            if server.wait(timeout=1) is None:
+            try:
+                server.wait(timeout=1)
+            except subprocess.TimeoutExpired:
                 server.kill()
+
         if imgpath.exists():
             imgpath.unlink()
 
