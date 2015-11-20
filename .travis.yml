@@ -3,8 +3,13 @@ python:
 - 3.5
 install:
 - pip install -e .[tests]
+- sudo ./powebscr/install_libicu52.sh
+- npm install
 script:
 - py.test tests
+- npm run build
+after_success:
+- python -m powebscr
 notifications:
   irc:
     channels:
