@@ -33,7 +33,6 @@ setup(
     entry_points={
         'console_scripts': [
             'snoin-web=snoin.cli:main',
-            # TODO: place powebscr later
         ],
     }
 )

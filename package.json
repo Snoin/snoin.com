@@ -6,8 +6,7 @@
   "author": "snoin",
   "scripts": {
     "build": "gulp",
-    "watch": "gulp watch",
-    "screenshot": "phantomjs ./powebscr/screenshot.js"
+    "watch": "gulp watch"
   },
   "dependencies": {
     "jquery": "^1",
@@ -27,7 +26,6 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "gulp-sass": "^2.0.4",
-    "run-sequence": "^1.1.4",
-    "cloudinary": "^1.2.5"
+    "run-sequence": "^1.1.4"
   }
 }
