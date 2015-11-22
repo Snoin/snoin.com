@@ -11,7 +11,7 @@ install_requires = {
 
 tests_require = {
     'pytest >= 2.8.2',
-    'flake8 >= 2.5.2',
+    'flake8 >= 2.5.0',
     'import-order >= 0.0.6',
 }
 
