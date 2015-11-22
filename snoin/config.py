@@ -2,10 +2,12 @@ import pathlib
 import runpy
 import sys
 
+
 def error(msgfmt, *args):
     msg = msgfmt.format(*args)
     print(msg, file=sys.stderr)
     raise SystemError(1)
+
 
 def load(file: pathlib.Path) -> dict:
     if not file.exists():
