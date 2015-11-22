@@ -5,6 +5,8 @@ install:
 - pip install -e .[tests]
 script:
 - py.test tests
+# lint
+- hooks/pre-commit
 notifications:
   irc:
     channels:
