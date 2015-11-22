@@ -72,6 +72,11 @@ target/
 .idea
 *.iml
 
+## deploy
+ssh.tar
+deploy/ssh
+deploy/ssh.pub
+
 
 ## config
 
