@@ -21,7 +21,7 @@ Python
 * 모든 Python코드는 [PEP-8](https://www.python.org/dev/peps/pep-0008/) 코딩 컨벤션을 준수한다. 단, 외부에서 가져왔고, 생산품에 전혀 영향을 주지 않는 코드는 제외한다.
 * flake8을 사용해서 PEP-8 준수 여부를 항시 검사한다.
 * indentation으로는 space 4글자를 사용한다.
-* 불필요한 diff 발생을 막기 위해 모든 `import`는 알파벳 오름차순(a-z순)으로 정렬한다. 혹시라도 있을 수 있는 실수를 방지하기 위해 [import-order](https://pypi.python.org/pypi/import-order/0.0.5)를 사용하여 import 순서를 강제적으로 통일한다. (단, import-order를 사용하는 대상은 테스트 대상이 되는 버전 중 가장 최신 버전만 해당한다)
+* 불필요한 diff 발생을 막기 위해 모든 `import`는 알파벳 오름차순(a-z순)으로 정렬한다. 혹시라도 있을 수 있는 실수를 방지하기 위해 [import-order](https://pypi.python.org/pypi/import-order)를 사용하여 import 순서를 강제적으로 통일한다. (단, import-order를 사용하는 대상은 테스트 대상이 되는 버전 중 가장 최신 버전만 해당한다)
 * 다른 Third-party 라이브러리와의 연동을 위해 docstring 외의 내용이 있는 모든 모듈은 `__all__` 변수를 항상 작성한다.
 * Old-style formatting(`'%s'` 등을 사용하는 것)은 사용하지 않는다. 대신 `str.format` 함수를 사용한다. 
 * 필요에 따라 문서화를 할 수 있다. 이 경우 문법은 Sphinx 처리를 위해 [reStructured Text](http://docutils.sourceforge.net/rst.html)를 사용한다.
