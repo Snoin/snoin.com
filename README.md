@@ -1,6 +1,8 @@
 snoin.com
 =========
 
+[![Build Status](https://travis-ci.org/Snoin/snoin.com.svg?branch=master)](https://travis-ci.org/Snoin/snoin.com)
+
 스노인 공식 사이트입니다!
 
 설치
