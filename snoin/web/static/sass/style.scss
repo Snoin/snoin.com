@@ -375,7 +375,7 @@ section {
   }
 }
 
-#services {
+#features {
   > div {
     > div {
       @extend .row;
@@ -416,6 +416,21 @@ section {
         span.standard {
           > i:last-child {
             @extend .fa-html5;
+          }
+        }
+        span.security {
+          > i:last-child {
+            @extend .fa-lock;
+          }
+        }
+        span.quality {
+          > i:last-child {
+            @extend .fa-thumbs-o-up;
+          }
+        }
+        span.consult {
+          > i:last-child {
+            @extend .fa-paper-plane;
           }
         }
         h4 {
