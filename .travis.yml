@@ -10,8 +10,6 @@ script:
 - npm run build
 after_success:
 - python -m powebscr
-- openssl aes-256-cbc -K $encrypted_ff646b1048a4_key -iv $encrypted_ff646b1048a4_iv
-  -in ssh.tar.enc -out ssh.tar -d
 - deploy/deploy.sh
 notifications:
   irc:
