@@ -8,6 +8,8 @@ install:
 script:
 - py.test tests
 - npm run build
+# lint
+- hooks/pre-commit
 after_success:
 - python -m powebscr
 - deploy/deploy.sh

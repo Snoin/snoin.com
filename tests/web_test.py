@@ -75,6 +75,7 @@ def test_smtp_server_fault(monkeypatch, fx_flask_client):
     class Fake:
         def ehlo(self):
             raise smtplib.SMTPException('인증실패')
+
     @contextlib.contextmanager
     def fake_context(*args):
         yield Fake()
@@ -136,11 +137,11 @@ def test_success(monkeypatch, fx_flask_app, fx_flask_client):
     assert msg['Subject'] == '고객님의 신규 상담이 접수되었습니다.'
     assert msg['From'].addresses[0].display_name == 'Snoin'
     assert msg['From'].addresses[0].addr_spec == '"no-reply@snoin.com"'
-    
+
     assert msg['To'].addresses[0].display_name == \
-           fx_flask_app.config['MAIL_LISTENERS'][0].display_name
+        fx_flask_app.config['MAIL_LISTENERS'][0].display_name
     assert msg['To'].addresses[0].addr_spec == \
-           fx_flask_app.config['MAIL_LISTENERS'][0].addr_spec
+        fx_flask_app.config['MAIL_LISTENERS'][0].addr_spec
 
     assert msg['To'].addresses[1].display_name == '홍길동'
     assert msg['To'].addresses[1].addr_spec == '"test@snoin.com"'
@@ -203,9 +204,9 @@ def test_success_with_phone(monkeypatch, fx_flask_app, fx_flask_client):
     assert msg['From'].addresses[0].addr_spec == '"no-reply@snoin.com"'
 
     assert msg['To'].addresses[0].display_name == \
-           fx_flask_app.config['MAIL_LISTENERS'][0].display_name
+        fx_flask_app.config['MAIL_LISTENERS'][0].display_name
     assert msg['To'].addresses[0].addr_spec == \
-           fx_flask_app.config['MAIL_LISTENERS'][0].addr_spec
+        fx_flask_app.config['MAIL_LISTENERS'][0].addr_spec
 
     assert msg['To'].addresses[1].display_name == '홍길동'
     assert msg['To'].addresses[1].addr_spec == '"test@snoin.com"'

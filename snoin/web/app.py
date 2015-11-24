@@ -1,8 +1,7 @@
+from email.headerregistry import Address
+from email.message import EmailMessage
 import json
 import smtplib
-
-from email.message import EmailMessage
-from email.headerregistry import Address
 
 from flask import Flask, jsonify, render_template, request
 from requests import get
