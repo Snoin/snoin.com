@@ -10,9 +10,18 @@ script:
 - npm run build
 after_success:
 - python -m powebscr
+- openssl aes-256-cbc -K $encrypted_ff646b1048a4_key -iv $encrypted_ff646b1048a4_iv
+  -in ssh.tar.enc -out ssh.tar -d
+- deploy/deploy.sh
 notifications:
   irc:
     channels:
-    - "irc.ozinger.org#snoin-dev"
+    - irc.ozinger.org#snoin-dev
     on_success: change
     on_failure: always
+env:
+  global:
+  # DEPLOY_ADDR
+  - secure: t46vHZpdyQk5kZhRImsKSGpIsNiG6di5xsqhS6KOZCxzrljpQG9bM9e6TzFdZ4L7f0SHthj205bIgxyTxbg+2C4zkbY8sqgaNQBlc3a9WoJ80NvaoHIu4kjAlnvrO2nSIHPpBF9aX1fwX6zruH6qJhpNOny6DRbJYyRP+8wmMZSZYXSloO33pwAbcZSfEeNnUVjDeQaV+DJ4w7bPSspdtsOHoRFiyxlKGShavrPjYhHvycdOSGI0VpeMq12cc49kgXFcCmfJrsGKoEoVCmMIVBbEwxQV4jotdDvqkxrBk36bl9MUoCCDYVtTF1FCfPGd6eW2PW2jcxIan5oQFedTtIF68oTGF3lklB+nGafcpTdQLRfU8qF6YCJtAfqxoDwE2oUQy5UB0mQcWlJoiWWwLaUAuzol7URvua2DctUoR0FsLuD4KrmXa/udDvkk3MRo355bpsFd4hlWV3GGgqInHl79nxlUV92R+EKNW/nDIilnroUZ1npN0zmvVSI9Ivx3dKKVJGT4s3DY7mlbrbWk8Nwhgcku462BH8OlMqaTKyLsMoDKnF5JK5nMBcqPAtXzX3hR68kUvzdJ/Jq9ncsxPJuTXG4WOY5xra6yoE2hIFSCPe0s6BC60InVm1fayyaVtbhcrdGhmX/q51+v1wPymCLaVNqV5kjI7DL09ESvFtQ=
+  # DEPLOY_SERVER_RESTART
+  - secure: 0F4CxRgg/bUv8pTxQ1nfwvjjAEhWycyMgYQ0jG4u/VaAxTni3lRUGZCxXynk8fVZnr/DJFzRJiDnvyqFfCUb0WmNgvVLvHKFHUP3gywTTpOx7jgdudBf2VpUdPlXD/Up29dlHDHsLDVuro3HlujDtdNmGbf8jBnUHlvdyUk3TII4YNfT0yGwqXX8BRsHmDpL8yBGuRR7XlSzobcN9WCc1jVxsiVXWhL3VRaYmo/rikFhMJK+wMzhAGbCHeYWv5eyl75GTvgDmNnXqN9s6lmy/7RD7q18aFNbKfAJ1882JKIpdPYYx7miqkPNIQCQcge89DsD5Udjfqc+SkPTNW77i9LwZUexjFHSg1M4lh2dJH9kc4kkLwlxlK9DCASotk4zn5HBB0y/3v/nVGcWoA1un0/BTqG5uAqqb1nJ37Th06TKD7+8U3nN8d/TTT0QqsVzoYYsgyRgEhuEdCCIcCXuhZUCCU7TLMOO315qj/8v9O71nkYGQQBV2AfJxREJVDuZwLRMQavYKB3ANl5RsT+ekFaJJHtC4Df7aC1P/as28EA3XSWOaWgW4LwhNmJLxCMYCPgIL+6AugW3BR3YawPGtFhhVV5i1JUjcnRJtB9xaCkJzRaCNu5axoXkxwd3txPcNh910zn+DifmnKive0N5oQPMhOP+CjnjYLVn6eZPe4s=
