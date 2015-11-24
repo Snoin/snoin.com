@@ -54,4 +54,15 @@ $(document).ready(function() {
       .attr('aria-expended', 'false')
       .removeClass('collapse in');
   });
+
+  var $form = $('#contactForm');
+  $form.submit(function () {
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var phone = $('#phone').val();
+    var message = $('#message').val();
+
+    contact(name, email, phone, message, window.alert);
+    return false;
+  });
 });
