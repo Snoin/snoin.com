@@ -134,6 +134,12 @@ SCSS (CSS)
 Git
 ---
 * 계정에 포함된 모든 hook은 설치하여 사용한다.
+
+    ```console
+    $ mkdir -p .git/hooks/
+    $ ln -s $(pwd)/hooks/pre-commit .git/hooks
+    ```
+
 * 각각의 commit은 가능한 테스트를 통과하도록 구성한다.
 
 
