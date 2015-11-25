@@ -5,8 +5,8 @@
   "homepage": "http://snoin.com",
   "author": "snoin",
   "scripts": {
-    "build": "gulp",
-    "watch": "gulp watch",
+    "build": "webpack",
+    "watch": "webpack --watch",
     "screenshot": "phantomjs ./powebscr/screenshot.js"
   },
   "dependencies": {
