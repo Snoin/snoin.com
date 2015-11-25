@@ -22,7 +22,7 @@ function contact(name, email, phone, message, onSuccess, onFail) {
   data.append('phone', phone);
   data.append('message', message);
 
-  fetch('http://snoin.com/contact/', {
+  fetch('/contact/', {
     method: 'post',
     body: data
   }).then(function (data) {

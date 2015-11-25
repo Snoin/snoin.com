@@ -17,7 +17,7 @@ describe('contact', function() {
     function onFail(error) {}
 
     fetch.mockImplementation(function(url, options) {
-      expect(url).toBe('http://snoin.com/contact/');
+      expect(url).toBe('/contact/');
       expect(options.method).toBe('post');
       expect(options.body).toBeTruthy();
       return Promise.reject(new Error('이름을 적어주세요!'));
@@ -39,7 +39,7 @@ describe('contact', function() {
     function onFail(error) {}
 
     fetch.mockImplementation(function(url, options) {
-      expect(url).toBe('http://snoin.com/contact/');
+      expect(url).toBe('/contact/');
       expect(options.method).toBe('post');
       expect(options.body).toBeTruthy();
       return Promise.reject(new Error('이름을 적어주세요!'));
@@ -61,7 +61,7 @@ describe('contact', function() {
     function onFail(error) {}
 
     fetch.mockImplementation(function(url, options) {
-      expect(url).toBe('http://snoin.com/contact/');
+      expect(url).toBe('/contact/');
       expect(options.method).toBe('post');
       expect(options.body).toBeTruthy();
       return Promise.reject(new Error('이름을 적어주세요!'));
@@ -83,7 +83,7 @@ describe('contact', function() {
     function onFail(error) {}
 
     fetch.mockImplementation(function(url, options) {
-      expect(url).toBe('http://snoin.com/contact/');
+      expect(url).toBe('/contact/');
       expect(options.method).toBe('post');
       expect(options.body).toBeTruthy();
       return Promise.resolve();
@@ -105,7 +105,7 @@ describe('contact', function() {
     function onFail(error) {}
 
     fetch.mockImplementation(function(url, options) {
-      expect(url).toBe('http://snoin.com/contact/');
+      expect(url).toBe('/contact/');
       expect(options.method).toBe('post');
       expect(options.body).toBeTruthy();
       return Promise.resolve();
@@ -127,7 +127,7 @@ describe('contact', function() {
     function onFail(error) {}
 
     fetch.mockImplementation(function(url, options) {
-      expect(url).toBe('http://snoin.com/contact/');
+      expect(url).toBe('/contact/');
       expect(options.method).toBe('post');
       expect(options.body).toBeTruthy();
       return Promise.reject(new Error('에러'));
