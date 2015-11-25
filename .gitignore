@@ -1,12 +1,6 @@
 node_modules
 
-snoin/web/static/css
-snoin/web/static/js
-snoin/web/static/map
-snoin/web/static/fonts
-snoin/web/static/sass/bootstrap
-snoin/web/static/sass/font-awesome
-snoin/web/static/source/vendors
+snoin/web/static/dist
 
 ### Python template
 # Byte-compiled / optimized / DLL files
