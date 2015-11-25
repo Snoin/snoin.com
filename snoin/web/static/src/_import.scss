@@ -1,5 +1,7 @@
-@import "bootstrap/bootstrap";
-@import "font-awesome/font-awesome.scss";
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+$fa-font-path: '~font-awesome/fonts';
+@import "~font-awesome/scss/font-awesome.scss";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
