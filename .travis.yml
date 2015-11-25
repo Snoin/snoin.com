@@ -11,6 +11,11 @@ install:
 script:
 - py.test tests
 - npm run build
+# check static files
+- file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv.min.js
+- file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv-printshiv.min.js
+- file snoin/web/static/dist/node_modules/respond.js/dest/respond.min.js
+- file snoin/web/static/dist/node_modules/respond.js/dest/respond.matchmedia.addListener.min.js
 # lint
 - hooks/pre-commit
 after_success:
