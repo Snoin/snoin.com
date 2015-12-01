@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import hashlib
 from pathlib import Path
 from subprocess import PIPE, call, check_call, check_output
 
@@ -48,6 +49,9 @@ def main():
         # TODO: dynamic viewport support
         # TODO: path is hardcoded.
         #check_output(["npm", "run", "screenshot"])
+        #with open("./powebscr/phantomjs", 'rb') as fp:
+        #    print("phantomjs md5:", hashlib.md5(fp.read()).hexdigest())
+
         check_output(["./powebscr/phantomjs", "./powebscr/screenshot.js"])
         
         output = check_output(["node", "./powebscr/upload.js", str(imgpath)])
