@@ -11,8 +11,8 @@ script:
 - npm run build
 # lint
 - hooks/pre-commit
-after_success:
 - python -m powebscr
+after_success:
 - deploy/deploy.sh
 notifications:
   irc:
