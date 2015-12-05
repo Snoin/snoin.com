@@ -1,8 +1,8 @@
 import pathlib
 import sys
 
-from ..config import load
-from .app import app
+from snoin.config import load
+from snoin.web.app import app
 
 __all__ = 'app', 'config', 'config_file'
 
