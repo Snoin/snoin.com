@@ -2,12 +2,19 @@ language: python
 python:
 - 3.5
 install:
+- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+- npm install -g npm
 - pip install -e .[tests]
 - sudo ./powebscr/install_libicu52.sh
 - npm install
 script:
 - py.test tests
 - npm run build
+# check static files
+- file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv.min.js
+- file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv-printshiv.min.js
+- file snoin/web/static/dist/node_modules/respond.js/dest/respond.min.js
+- file snoin/web/static/dist/node_modules/respond.js/dest/respond.matchmedia.addListener.min.js
 # lint
 - hooks/pre-commit
 after_success:
@@ -21,6 +28,7 @@ notifications:
     on_failure: always
 env:
   global:
+  - TRAVIS_NODE_VERSION="5"
   # DEPLOY_ADDR
   - secure: t46vHZpdyQk5kZhRImsKSGpIsNiG6di5xsqhS6KOZCxzrljpQG9bM9e6TzFdZ4L7f0SHthj205bIgxyTxbg+2C4zkbY8sqgaNQBlc3a9WoJ80NvaoHIu4kjAlnvrO2nSIHPpBF9aX1fwX6zruH6qJhpNOny6DRbJYyRP+8wmMZSZYXSloO33pwAbcZSfEeNnUVjDeQaV+DJ4w7bPSspdtsOHoRFiyxlKGShavrPjYhHvycdOSGI0VpeMq12cc49kgXFcCmfJrsGKoEoVCmMIVBbEwxQV4jotdDvqkxrBk36bl9MUoCCDYVtTF1FCfPGd6eW2PW2jcxIan5oQFedTtIF68oTGF3lklB+nGafcpTdQLRfU8qF6YCJtAfqxoDwE2oUQy5UB0mQcWlJoiWWwLaUAuzol7URvua2DctUoR0FsLuD4KrmXa/udDvkk3MRo355bpsFd4hlWV3GGgqInHl79nxlUV92R+EKNW/nDIilnroUZ1npN0zmvVSI9Ivx3dKKVJGT4s3DY7mlbrbWk8Nwhgcku462BH8OlMqaTKyLsMoDKnF5JK5nMBcqPAtXzX3hR68kUvzdJ/Jq9ncsxPJuTXG4WOY5xra6yoE2hIFSCPe0s6BC60InVm1fayyaVtbhcrdGhmX/q51+v1wPymCLaVNqV5kjI7DL09ESvFtQ=
   # DEPLOY_SERVER_RESTART
