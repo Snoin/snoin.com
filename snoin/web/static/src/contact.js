@@ -3,6 +3,13 @@ var fetch = require('isomorphic-fetch');
 var FormData = require('form-data');
 
 function contact(name, email, phone, message, onSuccess, onFail) {
+  if (typeof onSuccess !== 'function') {
+    onSuccess = console.log;
+  }
+  if (typeof onFail !== 'function') {
+    onFail = console.log;
+  }
+
   if (!name) {
     return onFail('이름을 적어주세요!');
   }
