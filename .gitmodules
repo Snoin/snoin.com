@@ -1,0 +1,3 @@
+[submodule "powebscr"]
+	path = powebscr
+	url = https://github.com/Snoin/powebscr.git
