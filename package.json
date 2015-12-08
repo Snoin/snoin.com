@@ -8,7 +8,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "screenshot": "phantomjs ./powebscr/screenshot.js",
-    "test": "jest"
+    "test-jest": "jest"
   },
   "dependencies": {
     "bootstrap-sass": "^3",
