@@ -3,15 +3,14 @@ python:
 - 3.5
 install:
 - pip install -e .[tests]
-- git lfs fetch
-- sudo ./powebscr/install_libicu52.sh
+- ./powebscr/setup-legacy.sh
 - npm install
 script:
 - py.test tests
 - npm run build
 # lint
 - hooks/pre-commit
-- python -m powebscr
+- python ./powebscr/powebscr/legacy/__main__.py
 after_success:
 - deploy/deploy.sh
 notifications:
