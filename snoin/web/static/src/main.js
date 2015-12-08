@@ -10,8 +10,8 @@ import 'bootstrap-sass/assets/javascripts/bootstrap';
 import 'jquery-easing/jquery.easing.1.3.js';
 
 /* import internal deps */
-import './plugins/jqBootstrapValidation.js';
 import './style.scss';
+import contact from './contact';
 
 $(document).ready(function() {
   var $navbar = $('#menu');
@@ -71,13 +71,27 @@ $(document).ready(function() {
   });
 
   var $form = $('#contactForm');
-  $form.submit(function () {
+  $form.submit(function (e) {
+    e.preventDefault();
     var name = $('#name').val();
     var email = $('#email').val();
     var phone = $('#phone').val();
     var message = $('#message').val();
 
-    contact(name, email, phone, message, window.alert);
+    function onSuccess(data) {
+      window.alert(data.message);
+      $('#message').val('');
+    }
+
+    function onFail(error) {
+      if (error.message) {
+        window.alert('에러: ' + error.message);
+      } else {
+        window.alert('에러: ' + error);
+      }
+    }
+
+    contact(name, email, phone, message, onSuccess, onFail);
     return false;
   });
 });

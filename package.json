@@ -7,14 +7,17 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "screenshot": "phantomjs ./powebscr/screenshot.js"
+    "screenshot": "phantomjs ./powebscr/screenshot.js",
+    "test-jest": "jest"
   },
   "dependencies": {
-    "jquery": "^1",
-    "jquery-easing": "^0.0.1",
     "bootstrap-sass": "^3",
+    "es6-promise": "^3.0.2",
     "font-awesome": "^4.4.0",
     "html5shiv": "^3.7.3",
+    "isomorphic-fetch": "^2.2.0",
+    "jquery": "^1",
+    "jquery-easing": "^0.0.1",
     "respond.js": "^1.4.2"
   },
   "devDependencies": {
@@ -25,13 +28,27 @@
     "babel-preset-stage-0": "^6.0.0",
     "cloudinary": "^1.2.5",
     "css-loader": "^0.23.0",
+    "es6-promise": "^3.0.2",
     "file-loader": "^0.8.5",
     "form-data": "^1.0.0-rc3",
+    "isomorphic-fetch": "^2.2.0",
     "jest-cli": "^0.8.0",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
+    ]
   }
 }
