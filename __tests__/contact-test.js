@@ -98,26 +98,4 @@ describe('contact', function() {
 
     contact.apply(this, args);
   });
-
-  it('server error throw error', function() {
-    require('es6-promise').polyfill();
-    var fetch = require('isomorphic-fetch');
-    var contact = require('../snoin/web/static/src/contact');
-
-    var name = '홍길동';
-    var email = 'no-reply@snoin.com';
-    var phone = '';
-    var message = '연락주세요';
-    function onSuccess(data) {}
-    function onFail(error) {}
-
-    fetch.mockImplementation(function(url, options) {
-      expect(url).toBe('/contact/');
-      expect(options.method).toBe('post');
-      expect(options.body).toBeTruthy();
-      return Promise.reject(new Error('에러'));
-    });
-
-    contact(name, email, phone, message, onSuccess, onFail);
-  });
 });
