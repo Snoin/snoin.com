@@ -1,13 +1,13 @@
 // __tests__/contact-test.js
 jest
-  .dontMock('../snoin/web/static/source/contact')
+  .dontMock('../snoin/web/static/src/contact')
   .dontMock('es6-promise');
 
 describe('contact', function() {
   it('empty name throw error', function() {
     require('es6-promise').polyfill();
     var fetch = require('isomorphic-fetch');
-    var contact = require('../snoin/web/static/source/contact');
+    var contact = require('../snoin/web/static/src/contact');
 
     var name = '';
     var email = 'no-reply@snoin.com';
@@ -29,7 +29,7 @@ describe('contact', function() {
   it('empty email throw error', function() {
     require('es6-promise').polyfill();
     var fetch = require('isomorphic-fetch');
-    var contact = require('../snoin/web/static/source/contact');
+    var contact = require('../snoin/web/static/src/contact');
 
     var name = '홍길동';
     var email = '';
@@ -51,7 +51,7 @@ describe('contact', function() {
   it('empty message throw error', function() {
     require('es6-promise').polyfill();
     var fetch = require('isomorphic-fetch');
-    var contact = require('../snoin/web/static/source/contact');
+    var contact = require('../snoin/web/static/src/contact');
 
     var name = '홍길동';
     var email = 'no-reply@snoin.com';
@@ -73,7 +73,7 @@ describe('contact', function() {
   it('empty phone do not throw error', function() {
     require('es6-promise').polyfill();
     var fetch = require('isomorphic-fetch');
-    var contact = require('../snoin/web/static/source/contact');
+    var contact = require('../snoin/web/static/src/contact');
 
     var name = '홍길동';
     var email = 'no-reply@snoin.com';
@@ -95,7 +95,7 @@ describe('contact', function() {
   it('full fields do not throw error', function() {
     require('es6-promise').polyfill();
     var fetch = require('isomorphic-fetch');
-    var contact = require('../snoin/web/static/source/contact');
+    var contact = require('../snoin/web/static/src/contact');
 
     var name = '홍길동';
     var email = 'no-reply@snoin.com';
@@ -117,7 +117,7 @@ describe('contact', function() {
   it('server error throw error', function() {
     require('es6-promise').polyfill();
     var fetch = require('isomorphic-fetch');
-    var contact = require('../snoin/web/static/source/contact');
+    var contact = require('../snoin/web/static/src/contact');
 
     var name = '홍길동';
     var email = 'no-reply@snoin.com';
