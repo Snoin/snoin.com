@@ -4,13 +4,13 @@ var FormData = require('form-data');
 
 function contact(name, email, phone, message, onSuccess, onFail) {
   if (!name) {
-    return Promise.reject(new Error('이름을 적어주세요!'));
+    return onFail('이름을 적어주세요!');
   }
   if (!email) {
-    return Promise.reject(new Error('메일 주소를 적어주세요!'));
+    return onFail('메일 주소를 적어주세요!');
   }
   if (!message) {
-    return Promise.reject(new Error('문의 사항을 적어주세요!'));
+    return onFail('문의 사항을 적어주세요!');
   }
   if (!phone) {
     phone = '';
@@ -29,7 +29,12 @@ function contact(name, email, phone, message, onSuccess, onFail) {
     if (data.status == 200) {
       return data.json();
     } else {
-      return Promise.reject(new Error(data.statusText));
+      return data.json()
+        .then(function (data) {
+          return Promise.reject(data);
+        }).catch(function (error) {
+          return Promise.reject(new Error(data.statusText));
+        });
     }
   }).then(function (data){
     onSuccess(data);
