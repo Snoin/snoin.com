@@ -5,7 +5,7 @@ install:
 - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
 - npm install -g npm
 - pip install -e .[tests]
-- sudo ./powebscr/install_libicu52.sh
+- ./powebscr/setup-legacy.sh
 - npm install
 script:
 - py.test tests
@@ -18,8 +18,8 @@ script:
 - file snoin/web/static/dist/node_modules/respond.js/dest/respond.matchmedia.addListener.min.js
 # lint
 - hooks/pre-commit
+- python ./powebscr/powebscr/legacy/__main__.py
 after_success:
-- python -m powebscr
 - deploy/deploy.sh
 notifications:
   irc:
