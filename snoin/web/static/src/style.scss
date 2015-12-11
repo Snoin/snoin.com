@@ -713,24 +713,6 @@ section {
   }
 }
 
-#clients {
-  > div {
-    > div {
-      > div {
-        @extend .col-md-3;
-        @extend .col-sm-6;
-
-        img {
-          @extend .img-responsive;
-          @extend .img-centered;
-
-          margin: 50px auto;
-        }
-      }
-    }
-  }
-}
-
 #contact {
   background-color: $gray-darkest;
   background-image: url('../images/map-image.png');
