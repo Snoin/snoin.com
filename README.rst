@@ -84,3 +84,8 @@ Python 파일의 테스트는 pytest를 사용합니다.
 
    만약 ``py.test`` 명령어를 ``tests`` 인자 없이 사용하면 ``node_modules`` 내의
    의존성들까지 모두 포함되므로 주의를 요합니다.
+
+License
+-------
+
+AGPLv3
