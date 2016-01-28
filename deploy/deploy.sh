@@ -4,8 +4,8 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
     file ssh.tar
     tar -xvf ssh.tar
     ls -l deploy/
-    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR "cd /home/snoin/snoin.com && git reset --hard && git pull -f origin master"
-    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR "ls /home/snoin/snoin.com/snoin.cfg.py"
-    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR "cd /home/snoin/snoin.com && rm -rf node_modules && npm set progress=false && npm install && npm run build"
-    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR $DEPLOY_SERVER_RESTART
+    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR -p $DEPLOY_PORT "cd /home/snoin/snoin.com && git reset --hard && git pull -f origin master"
+    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR -p $DEPLOY_PORT "ls /home/snoin/snoin.com/snoin.cfg.py"
+    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR -p $DEPLOY_PORT "cd /home/snoin/snoin.com && rm -rf node_modules && npm set progress=false && npm install && npm run build"
+    ssh -i deploy/ssh -oStrictHostKeyChecking=no $DEPLOY_ADDR -p $DEPLOY_PORT $DEPLOY_SERVER_RESTART
 fi
