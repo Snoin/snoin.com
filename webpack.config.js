@@ -1,13 +1,19 @@
 var webpack = require("webpack");
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var ExtractSCSS = new ExtractTextPlugin('[name].css');
 
 module.exports = {
   context: __dirname + "/snoin/web/static",
-  entry: './src/main.js',
+  entry: {
+    'app': './src/main.js',
+    'style': './src/style.scss'
+  },
   output: {
     path: path.join(__dirname, "snoin", "web", "static", "dist"),
     publicPath: "/static/dist/",
-    filename: 'app.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
@@ -21,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        loaders: ['style', 'css', 'sass']
+        loader: ExtractSCSS.extract('style', 'css!sass')
       },
       {
         test: /\.(eot|woff2?|ttf|svg)(\?.+)?$/,
@@ -34,6 +40,7 @@ module.exports = {
     ]
   },
   plugins: [
+    ExtractSCSS,
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
