@@ -10,7 +10,6 @@ import 'bootstrap-sass/assets/javascripts/bootstrap';
 import 'jquery-easing/jquery.easing.1.3.js';
 
 /* import internal deps */
-import './style.scss';
 import contact from './contact';
 
 $(document).ready(function() {
