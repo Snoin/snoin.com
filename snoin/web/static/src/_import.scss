@@ -3,8 +3,63 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $fa-font-path: '~font-awesome/fonts';
 @import "~font-awesome/scss/font-awesome.scss";
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'),
+  url('../fonts/montserrat-regular.woff2') format('woff2'),
+  url('../fonts/montserrat-regular.eot'),
+  url('../fonts/montserrat-regular.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'),
+  url('../fonts/montserrat-bold.woff2') format('woff2'),
+  url('../fonts/montserrat-bold.woff') format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Slab Thin'),
+  local('RobotoSlab-Thin'),
+  url('../fonts/roboto-slab-thin.woff2') format('woff2'),
+  url('../fonts/roboto-slab-thin.woff') format('woff');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Slab Light'),
+  local('RobotoSlab-Light'),
+  url('../fonts/roboto-slab-light.woff2') format('woff2'),
+  url('../fonts/roboto-slab-light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'),
+  local('RobotoSlab-Regular'),
+  url('../fonts/roboto-slab-regular.woff2') format('woff2'),
+  url('../fonts/roboto-slab-regular.eot'),
+  url('../fonts/roboto-slab-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Slab Bold'),
+  local('RobotoSlab-Bold'),
+  url('../fonts/roboto-slab-bold.woff2') format('woff2'),
+  url('../fonts/roboto-slab-bold.woff') format('woff');
+}
 
 @font-face {
   font-family: 'Nanum Myeongjo';
