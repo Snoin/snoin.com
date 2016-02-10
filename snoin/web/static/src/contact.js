@@ -39,8 +39,6 @@ function contact(name, email, phone, message, onSuccess, onFail) {
       return data.json()
         .then(function (data) {
           return Promise.reject(data);
-        }).catch(function (error) {
-          return Promise.reject(new Error(data.statusText));
         });
     }
   }).then(function (data){
