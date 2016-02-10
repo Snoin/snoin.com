@@ -8,7 +8,9 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "screenshot": "phantomjs ./powebscr/screenshot.js",
-    "test-jest": "jest"
+    "test-jest": "jest",
+    "test-karma": "karma start",
+    "test-karma-ci": "karma start --single-run --browsers Firefox"
   },
   "dependencies": {
     "bootstrap-sass": "^3",
