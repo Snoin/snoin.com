@@ -15,7 +15,6 @@ before_script:
 script:
 - py.test tests
 - npm run build
-- npm run test-jest
 - npm run test-karma-ci
 # check static files
 - file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv.min.js
