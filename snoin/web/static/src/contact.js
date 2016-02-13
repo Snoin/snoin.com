@@ -29,7 +29,7 @@ function contact(name, email, phone, message, onSuccess, onFail) {
   data.append('phone', phone);
   data.append('message', message);
 
-  fetch('/contact/', {
+  window.fetch('/contact/', {
     method: 'post',
     body: data
   }).then(function (data) {
@@ -39,8 +39,6 @@ function contact(name, email, phone, message, onSuccess, onFail) {
       return data.json()
         .then(function (data) {
           return Promise.reject(data);
-        }).catch(function (error) {
-          return Promise.reject(new Error(data.statusText));
         });
     }
   }).then(function (data){

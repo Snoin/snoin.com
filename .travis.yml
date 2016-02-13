@@ -1,6 +1,8 @@
 language: python
 python:
 - 3.5
+addon:
+  firefox: latest
 install:
 - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
 - npm set progress=false
@@ -8,10 +10,13 @@ install:
 - pip install -e .[tests]
 - sudo ./powebscr/install_libicu52.sh
 - npm install
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 script:
 - py.test tests
 - npm run build
-- npm run test-jest
+- npm run test-karma-ci
 # check static files
 - file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv.min.js
 - file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv-printshiv.min.js
