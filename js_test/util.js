@@ -1,31 +1,31 @@
-export function jsonOk (body) {
-  var mockResponse = new window.Response(JSON.stringify(body), {
+export function jsonOk(body) {
+  const mockResponse = new window.Response(JSON.stringify(body), {
     status: 200,
     headers: {
-      'Content-type': 'application/json'
-    }
+      'Content-type': 'application/json',
+    },
   });
 
   return Promise.resolve(mockResponse);
 }
 
-export function jsonError (status, body) {
-  var mockResponse = new window.Response(JSON.stringify(body), {
-    status: status,
+export function jsonError(status, body) {
+  const mockResponse = new window.Response(JSON.stringify(body), {
+    status,
     headers: {
-      'Content-type': 'application/json'
-    }
+      'Content-type': 'application/json',
+    },
   });
 
   return Promise.resolve(mockResponse);
 }
 
-export function textError (status, body) {
-  var mockResponse = new window.Response(body, {
-    status: status,
+export function textError(status, body) {
+  const mockResponse = new window.Response(body, {
+    status,
     headers: {
-      'Content-type': 'application/json'
-    }
+      'Content-type': 'application/json',
+    },
   });
 
   return Promise.resolve(mockResponse);

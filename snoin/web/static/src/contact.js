@@ -1,29 +1,24 @@
-require('es6-promise').polyfill();
-var fetch = require('isomorphic-fetch');
-var FormData = require('form-data');
+import 'babel-polyfill';
+import promise from 'es6-promise';
+promise.polyfill();
+import 'isomorphic-fetch';
+import FormData from 'form-data';
 
-function contact(name, email, phone, message, onSuccess, onFail) {
-  if (typeof onSuccess !== 'function') {
-    onSuccess = console.log;
-  }
-  if (typeof onFail !== 'function') {
-    onFail = console.log;
-  }
+function contact(onSuccess, onFail, name = '', email = '', phone = '', message = '') {
+  const success = typeof onSuccess === 'function' ? onSuccess : console.log;
+  const fail = typeof onFail === 'function' ? onFail : console.log;
 
   if (!name) {
-    return onFail('이름을 적어주세요!');
+    return fail('이름을 적어주세요!');
   }
   if (!email) {
-    return onFail('메일 주소를 적어주세요!');
+    return fail('메일 주소를 적어주세요!');
   }
   if (!message) {
-    return onFail('문의 사항을 적어주세요!');
-  }
-  if (!phone) {
-    phone = '';
+    return fail('문의 사항을 적어주세요!');
   }
 
-  var data = new FormData();
+  const data = new FormData();
   data.append('name', name);
   data.append('email', email);
   data.append('phone', phone);
@@ -31,21 +26,24 @@ function contact(name, email, phone, message, onSuccess, onFail) {
 
   window.fetch('/contact/', {
     method: 'post',
-    body: data
-  }).then(function (data) {
-    if (data.status == 200) {
-      return data.json();
-    } else {
-      return data.json()
-        .then(function (data) {
-          return Promise.reject(data);
-        });
+    body: data,
+  }).then(response => {
+    const json = response.json()
+      .catch(error => {
+        fail(error);
+      });
+    if (response.status >= 200 && response.status < 300) {
+      return json.then(res => {
+        success(res);
+      });
     }
-  }).then(function (data){
-    onSuccess(data);
-  }).catch(function (error) {
-    onFail(error);
+    return json.then(res => {
+      fail(res);
+    });
+  }).catch(error => {
+    fail(error);
   });
+  return true;
 }
 
-module.exports = contact;
+export default contact;

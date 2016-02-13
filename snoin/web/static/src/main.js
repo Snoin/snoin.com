@@ -1,8 +1,11 @@
+/*eslint-disable */
 /* copy IE related js */
+// FIXME: Change to other solution such as cp command instead.
 import 'file-loader?name=[path][name].[ext]&context=./!html5shiv/dist/html5shiv.min.js';
 import 'file-loader?name=[path][name].[ext]&context=./!html5shiv/dist/html5shiv-printshiv.min.js';
 import 'file-loader?name=[path][name].[ext]&context=./!respond.js/dest/respond.min.js';
 import 'file-loader?name=[path][name].[ext]&context=./!respond.js/dest/respond.matchmedia.addListener.min.js';
+/*eslint-enable */
 
 /* import external deps */
 import 'jquery';
@@ -12,85 +15,87 @@ import 'jquery-easing/jquery.easing.1.3.js';
 /* import internal deps */
 import contact from './contact';
 
-$(document).ready(function() {
-  var $navbar = $('#menu');
 
-  (function() {
-    var docElem = document.documentElement,
-      didScroll = false,
-      changeHeaderOn = 300;
+const $navbar = $('#menu');
+const $window = $(window);
+const docElem = document.documentElement;
+const changeHeaderOn = 300;
+let didScroll = false;
 
-    function init() {
-      $(window).on('scroll', function() {
-        if(!didScroll) {
-          didScroll = true;
-          setTimeout(scrollPage, 250);
-        }
-      });
+function scrollTop() {
+  return window.pageYOffset || docElem.scrollTop;
+}
+
+function scrollPage() {
+  if (scrollTop() >= changeHeaderOn) {
+    $navbar.addClass('navbar-shrink');
+  } else {
+    $navbar.removeClass('navbar-shrink');
+  }
+  didScroll = false;
+}
+
+function initScroll() {
+  $window.on('scroll', () => {
+    if (!didScroll) {
+      didScroll = true;
+      setTimeout(scrollPage, 250);
     }
+  });
+}
 
-    function scrollPage() {
-      var sy = scrollY();
-      if (sy >= changeHeaderOn) {
-        $navbar.addClass('navbar-shrink');
-      } else {
-        $navbar.removeClass('navbar-shrink');
-      }
-      didScroll = false;
-    }
+$(document).ready(() => {
+  const $form = $('#contactForm');
 
-    function scrollY() {
-      return window.pageYOffset || docElem.scrollTop;
-    }
+  initScroll();
+  scrollPage();
 
-    init();
-    scrollPage();
+  $('body').scrollspy({
+    target: '#menu',
+  });
 
-    $('body').scrollspy({
-      target: '#menu'
-    });
-  })();
-
-  $(window).on('hashchange', function(e) {
+  $window.on('hashchange', e => {
     e.preventDefault();
   });
 
-  $('a.page-scroll').click(function(event) {
-    var $this = $(this);
+  $('a.page-scroll').click(e => {
+    const $this = $(this);
+    e.preventDefault();
     $('html, body').stop().animate({
-      scrollTop: $($this.attr('href')).offset().top
+      scrollTop: $($this.attr('href')).offset().top,
     }, 1500, 'easeInOutExpo');
-    event.preventDefault();
   });
 
-  $('nav[aria-expended=true] ul li a', $navbar).click(function() {
+  $('nav[aria-expended=true] ul li a', $navbar).click(() => {
     $('nav', $navbar)
       .attr('aria-expended', 'false')
       .removeClass('collapse in');
   });
 
-  var $form = $('#contactForm');
-  $form.submit(function (e) {
+
+  $form.submit(e => {
+    const $message = $('#message');
+    const name = $('#name').val();
+    const email = $('#email').val();
+    const phone = $('#phone').val();
+    const message = $message.val();
+
     e.preventDefault();
-    var name = $('#name').val();
-    var email = $('#email').val();
-    var phone = $('#phone').val();
-    var message = $('#message').val();
 
     function onSuccess(data) {
       window.alert(data.message);
-      $('#message').val('');
+      $message.val('');
     }
 
     function onFail(error) {
       if (error.message) {
-        window.alert('에러: ' + error.message);
+        window.alert(`에러: ${error.message}`);
       } else {
-        window.alert('에러: ' + error);
+        window.alert(`에러: ${error}`);
       }
     }
 
-    contact(name, email, phone, message, onSuccess, onFail);
+    contact(onSuccess, onFail, name, email, phone, message);
     return false;
   });
 });

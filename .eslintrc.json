@@ -1,0 +1,18 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "sinon": true // sinonjs for test
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0, // babel-eslint
+    "no-empty-label": 0,
+    "space-return-throw-case": 0,
+    "space-before-keywords": 0,
+    "space-after-keywords": 0,
+    "no-labels": 2,
+    "keyword-spacing": 2,
+    "no-console": 0,
+    "no-alert": 0
+  }
+}
