@@ -1,4 +1,4 @@
-import { promise } from 'es6-promise';
+import promise from 'es6-promise';
 promise.polyfill();
 import 'isomorphic-fetch';
 import FormData from 'form-data';
