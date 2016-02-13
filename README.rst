@@ -85,6 +85,22 @@ Python 파일의 테스트는 pytest를 사용합니다.
    만약 ``py.test`` 명령어를 ``tests`` 인자 없이 사용하면 ``node_modules`` 내의
    의존성들까지 모두 포함되므로 주의를 요합니다.
 
+
+Testing JavaScript Files
+------------------------
+
+Python 파일의 테스트는 karma를 사용합니다.
+실 브라우저에서 테스트가 기동되므로 Firefox, Firefox Developer Edition, Chrome이 필요합니다.
+
+.. code-block:: console
+
+   $ npm run test-karma
+
+.. warning::
+
+   실 브라우저가 설치되지 않았을 경우 에러가 발생합니다.
+
+
 License
 -------
 
