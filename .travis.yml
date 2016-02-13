@@ -8,7 +8,6 @@ install:
 - npm set progress=false
 - npm install -g npm
 - pip install -e .[tests]
-- sudo ./powebscr/install_libicu52.sh
 - npm install
 before_script:
 - export DISPLAY=:99.0
@@ -25,7 +24,6 @@ script:
 # lint
 - hooks/pre-commit
 after_success:
-- python -m powebscr
 - deploy/deploy.sh
 notifications:
   irc:
