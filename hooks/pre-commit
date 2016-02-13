@@ -11,3 +11,4 @@ if [ $VERSION = '3.5' ]; then
 else
     echo "Don't check import order with this python version."
 fi
+npm run lint
