@@ -28,12 +28,14 @@ function contact(onSuccess, onFail, name = '', email = '', phone = '', message =
     body: data,
   }).then(response => {
     const json = response.json();
-    if (response.status === 200) {
-      return json;
+    if (response.status >= 200 && response.status < 300) {
+      return json.then(res => {
+        success(res);
+      });
     }
-    return Promise.reject(json);
-  }).then(json => {
-    success(json);
+    return json.then(res => {
+      fail(res);
+    });
   }).catch(error => {
     fail(error);
   });
