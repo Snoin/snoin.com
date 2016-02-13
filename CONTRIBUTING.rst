@@ -112,11 +112,14 @@ HTML
 
 JavaScript
 ----------
-* ``;``\를 생략하는 것은 금지한다.
-* indentation으로는 space 2글자를 사용한다.
+* `Airbnb JavaScript Style Guide`_를 준수한다.
+* `eslint`_를 사용하여 문법 준수 여부를 검사한다.
 * jsx를 사용하는 경우, 자식 요소가 없는 태그는 XML 스타일로 닫는다. (``<MyApp />``)
 * 개발이 사실상 중지된 bower, grunt는 사용하지 않는다.
 * 코드 컴파일시 sourcemap을 만든다.
+
+.. _Airbnb JavaScript Style Guide: https://github.com/airbnb/javascript/
+.. _eslint: http://eslint.org/
 
 
 SCSS (CSS)
@@ -193,6 +196,8 @@ Testing
 -------
 * Python의 테스팅은 pytest_\를 사용하며, `pytest-cov`_\를 사용하여
   coverage를 측정한다.
+* JavaScript의 테스팅은 karma_\를 사용한다.
 
 .. _pytest: http://pytest.org/latest/
 .. _pytest-cov: https://pypi.python.org/pypi/pytest-cov
+.. _karma: https://karma-runner.github.io/0.13/index.html
