@@ -1,7 +1,5 @@
 import 'babel-polyfill';
-import promise from 'es6-promise';
-promise.polyfill();
-import 'isomorphic-fetch';
+import 'whatwg-fetch';
 import FormData from 'form-data';
 
 function contact(onSuccess, onFail, name = '', email = '', phone = '', message = '') {

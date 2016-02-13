@@ -1,6 +1,7 @@
+import 'babel-polyfill';
+import 'whatwg-fetch';
 import { jsonOk, jsonError, textError } from './util.js';
 import contact from '../snoin/web/static/src/contact';
-import 'isomorphic-fetch';
 
 describe('contact', () => {
   beforeEach(() => {
