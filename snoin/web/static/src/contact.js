@@ -27,7 +27,10 @@ function contact(onSuccess, onFail, name = '', email = '', phone = '', message =
     method: 'post',
     body: data,
   }).then(response => {
-    const json = response.json();
+    const json = response.json()
+      .catch(error => {
+        fail(error);
+      });
     if (response.status >= 200 && response.status < 300) {
       return json.then(res => {
         success(res);
