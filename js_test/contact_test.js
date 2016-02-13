@@ -12,17 +12,17 @@ describe('contact', () => {
   });
 
   describe('with empty name arguments', () => {
-    it('must be occur error', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'test@example.com',
         /* phone */'010-0000-0000',
         /* message */'연락 바랍니다',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -32,17 +32,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (email also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (email also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'', /* empty! */
         /* phone */'010-0000-0000',
         /* message */'연락 바랍니다',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -52,17 +52,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (phone also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (phone also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'test@example.com',
         /* phone */'', /* empty! */
         /* message */'연락 바랍니다',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -72,17 +72,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (message also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (message also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'test@example.com',
         /* phone */'010-0000-0000',
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -92,17 +92,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (email and phone also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (email and phone also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'', /* empty! */
         /* phone */'', /* empty! */
         /* message */'연락 바랍니다',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -112,17 +112,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (email and message also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (email and message also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'', /* empty! */
         /* phone */'010-0000-0000',
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -132,17 +132,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (phone and message also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (phone and message also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'test@example.com',
         /* phone */'', /* empty! */
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -152,17 +152,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (the rest fields also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (the rest fields also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'', /* empty! */
         /* email */'',
         /* phone */'', /* empty! */
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -174,17 +174,17 @@ describe('contact', () => {
   });
 
   describe('with empty email arguments', () => {
-    it('must be occur error', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'', /* empty! */
         /* phone */'010-0000-0000',
         /* message */'연락 바랍니다',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -194,17 +194,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (phone also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (phone also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'', /* empty! */
         /* phone */'', /* empty! */
         /* message */'연락 바랍니다',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -214,17 +214,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (message also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (message also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'', /* empty! */
         /* phone */'010-0000-0000',
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -234,17 +234,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (the rest fields also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (the rest fields also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'', /* empty! */
         /* phone */'', /* empty! */
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -256,17 +256,17 @@ describe('contact', () => {
   });
 
   describe('with empty message arguments', () => {
-    it('must be occur error', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'test@example.com',
         /* phone */'010-0000-0000',
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -276,17 +276,17 @@ describe('contact', () => {
       done();
     });
 
-    it('must be occur error (phone also empty)', (done) => {
-      let success = sinon.spy();
-      let fail = sinon.spy();
+    it('must be occur error (phone also empty)', done => {
+      const success = sinon.spy();
+      const fail = sinon.spy();
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'test@example.com',
         /* phone */'', /* empty! */
         /* message */'', /* empty! */
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -299,24 +299,27 @@ describe('contact', () => {
 
   describe('normal requests', () => {
     beforeEach(() => {
-      window.fetch.returns(jsonOk({'message': '접수되었습니다.'}));
+      const response = {
+        message: '접수되었습니다.',
+      };
+      window.fetch.returns(jsonOk(response));
     });
 
-    it('must not be occur error', (done) => {
-      let fail = sinon.spy();
-      let success = (data) => {
+    it('must not be occur error', done => {
+      const fail = sinon.spy();
+      const success = data => {
         expect(fail.calledOnce).toBe(false);
         expect(data.message).toEqual('접수되었습니다.');
         done();
       };
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'test@example.com',
         /* phone */'010-0000-0000',
         /* message */'연락 바랍니다.',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -325,24 +328,27 @@ describe('contact', () => {
 
   describe('respond 500', () => {
     beforeEach(() => {
-      window.fetch.returns(jsonError(500, {'message': 'Some error Message.'}));
+      const response = {
+        message: 'Some error Message.',
+      };
+      window.fetch.returns(jsonError(500, response));
     });
 
-    it('must be occur error', (done) => {
-      let success = sinon.spy();
-      let fail = (data) => {
+    it('must be occur error', done => {
+      const success = sinon.spy();
+      const fail = error => {
         expect(success.calledOnce).toBe(false);
-        expect(data.message).toEqual('Some error Message.');
+        expect(error.message).toEqual('Some error Message.');
         done();
       };
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'test@example.com',
         /* phone */'010-0000-0000',
         /* message */'연락 바랍니다.',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
@@ -351,23 +357,23 @@ describe('contact', () => {
 
   describe('respond 500 with non-json', () => {
     beforeEach(() => {
-      window.fetch.returns(jsonError(500, 'It is not JSON'));
+      window.fetch.returns(textError(500, 'It is not JSON'));
     });
 
-    it('must be occur error', (done) => {
-      let success = sinon.spy();
-      let fail = (data) => {
+    it('must be occur error', done => {
+      const success = sinon.spy();
+      const fail = () => {
         expect(success.calledOnce).toBe(false);
         done();
       };
 
-      let args = [
+      const args = [
+        /* onSuccess */success,
+        /* onFail */fail,
         /* name */'홍길동',
         /* email */'test@example.com',
         /* phone */'010-0000-0000',
         /* message */'연락 바랍니다.',
-        /* onSuccess */success,
-        /* onFail */fail
       ];
 
       contact(...args);
