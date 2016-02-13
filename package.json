@@ -9,7 +9,8 @@
     "watch": "webpack --watch",
     "screenshot": "phantomjs ./powebscr/screenshot.js",
     "test-karma": "karma start",
-    "test-karma-ci": "karma start --single-run --browsers Firefox"
+    "test-karma-ci": "karma start --single-run --browsers Firefox",
+    "lint": "eslint --env browser,es6,jquery snoin/web/static/src/**/*.js && eslint --env browser,es6,jasmine js_test/**/*.js"
   },
   "dependencies": {
     "bootstrap-sass": "^3",
