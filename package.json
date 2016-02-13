@@ -17,7 +17,8 @@
     "html5shiv": "^3.7.3",
     "jquery": "^1",
     "jquery-easing": "^0.0.1",
-    "respond.js": "^1.4.2"
+    "respond.js": "^1.4.2",
+    "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",
@@ -33,7 +34,6 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "form-data": "^1.0.0-rc3",
-    "isomorphic-fetch": "^2.2.0",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",

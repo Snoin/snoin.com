@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import 'isomorphic-fetch';
+import 'whatwg-fetch';
 import FormData from 'form-data';
 
 function contact(onSuccess, onFail, name = '', email = '', phone = '', message = '') {
