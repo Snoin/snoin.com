@@ -2,7 +2,7 @@
   "name": "snoin.com",
   "title": "snoin.com",
   "version": "0.0.0",
-  "homepage": "http://snoin.com",
+  "homepage": "https://snoin.com",
   "author": "snoin",
   "scripts": {
     "build": "webpack",
