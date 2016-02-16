@@ -59,7 +59,7 @@ $(document).ready(() => {
   });
 
   $('a.page-scroll').click(e => {
-    const $this = $(this);
+    const $this = $(e.currentTarget);
     e.preventDefault();
     $('html, body').stop().animate({
       scrollTop: $($this.attr('href')).offset().top,
