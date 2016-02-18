@@ -713,6 +713,55 @@ section {
   }
 }
 
+#service {
+  > div {
+    > div {
+      > div {
+        @extend .row;
+
+        form {
+          @extend .col-md-6;
+          @extend .col-md-offset-3;
+
+          h4 {
+            margin-top: 2em;
+          }
+          h4:first-child {
+            margin-top: 0;
+          }
+
+          label {
+            background: lighten($brand-primary, 30%);
+            border-radius: .5em;
+            display: block;
+            margin-left: 1em;
+            max-width: 500px;
+            padding: 1em;
+          }
+          label.checked {
+            background: lighten($brand-primary, 10%);
+          }
+        }
+      }
+    }
+
+    footer {
+      div {
+        p {
+          @extend .text-center;
+
+          margin-top: 3em;
+
+          a {
+            @extend .btn;
+            @extend .btn-xl;
+          }
+        }
+      }
+    }
+  }
+}
+
 #contact {
   background-color: $gray-darkest;
   background-image: url('../images/map-image.png');
