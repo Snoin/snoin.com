@@ -21,6 +21,7 @@ const $window = $(window);
 const docElem = document.documentElement;
 const changeHeaderOn = 300;
 const $message = $('#message');
+const $service = $('#service');
 const $serviceForm = $('#serviceForm');
 let didScroll = false;
 
@@ -123,6 +124,13 @@ $(document).ready(() => {
       .removeClass('collapse in');
   });
 
+  $service.find('button').click(e => {
+    const $this = $(e.currentTarget);
+    $this.remove();
+    $serviceForm.slideDown(3000, () => {
+      $service.find('footer').show();
+    });
+  });
 
   $serviceFormInputs.change(e => {
     const $this = $(e.currentTarget);

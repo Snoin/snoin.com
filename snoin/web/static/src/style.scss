@@ -718,10 +718,19 @@ section {
     > div {
       > div {
         @extend .row;
+        @extend .text-center;
+
+        button {
+          @extend .btn;
+          @extend .btn-xl;
+        }
 
         form {
           @extend .col-md-6;
           @extend .col-md-offset-3;
+
+          display: none;
+          text-align: left;
 
           h4 {
             margin-top: 2em;
@@ -746,6 +755,8 @@ section {
     }
 
     footer {
+      display: none;
+
       div {
         p {
           @extend .text-center;
