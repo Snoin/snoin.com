@@ -297,16 +297,13 @@ body {
   > div {
     @extend .container;
 
-    .header-cover {
-      width:100%;
-      background-color: rgba(black, 0.5);
-    }
-
     > div {
       @extend .intro-text;
 
-      padding-top: 300px;
+      background-color: rgba(black, 0.5);
       padding-bottom: 200px;
+      padding-top: 300px;
+      width: 100%;
 
       .intro-lead-in {
         @include heading-font();
