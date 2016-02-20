@@ -378,7 +378,6 @@ section {
 
       font-size: 16px;
       text-transform: none;
-      font-style: italic;
       font-weight: 400;
       margin-bottom: 75px;
     }
@@ -511,7 +510,7 @@ section {
 
             .image {
               left: 0;
-              margin-left: 0;
+              margin: 20px 10px;
               width: 80px;
               height: 80px;
               position: absolute;
@@ -526,19 +525,19 @@ section {
                 width: 100px;
                 height: 100px;
                 left: 50%;
-                margin-left: -50px;
+                margin: 0 -50px;
               }
 
               @media(min-width:992px) {
                 width: 150px;
                 height: 150px;
-                margin-left: -75px;
+                margin: 0 -75px;
               }
 
               @media(min-width:1200px) {
                 width: 170px;
                 height: 170px;
-                margin-left: -85px;
+                margin: 0 -85px;
               }
 
               img {
@@ -571,23 +570,23 @@ section {
             .panel {
               width: 100%;
               float: right;
-              padding: 0 20px 0 20px;
+              padding: 0 20px 0 100px;
               position: relative;
               text-align: left;
 
               @media(min-width:768px) {
                 width: 41%;
                 float: left;
-                padding: 0 20px 20px 30px;
+                padding: 10px 20px 20px 30px;
                 text-align: right;
               }
 
               @media(min-width:992px) {
-                padding: 0 20px 20px;
+                padding: 10px 20px 20px;
               }
 
               @media(min-width:1200px) {
-                padding: 0 20px 20px 100px;
+                padding: 10px 20px 20px 20px;
               }
 
               &:before {
