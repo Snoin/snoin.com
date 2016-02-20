@@ -201,6 +201,10 @@ body {
 
       a {
         padding: 0;
+	
+        img{
+          height: 53px;
+        }
       }
 
       button {
@@ -297,13 +301,14 @@ body {
   > div {
     @extend .container;
 
+    background-color: rgba(black, 0.5);
+    width: 100%;
+
     > div {
       @extend .intro-text;
 
-      background-color: rgba(black, 0.5);
       padding-bottom: 200px;
       padding-top: 300px;
-      width: 100%;
 
       .intro-lead-in {
         @include heading-font();
