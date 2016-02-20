@@ -199,6 +199,10 @@ body {
     .header {
       @extend .navbar-header;
 
+      a {
+        padding: 0;
+      }
+
       button {
         @extend .navbar-toggle;
 
@@ -290,9 +294,13 @@ body {
   color: white;
   text-align: center;
 
-
   > div {
     @extend .container;
+
+    .header-cover {
+      width:100%;
+      background-color: rgba(black, 0.5);
+    }
 
     > div {
       @extend .intro-text;
@@ -301,7 +309,7 @@ body {
       padding-bottom: 200px;
 
       .intro-lead-in {
-        @include serif-font();
+        @include heading-font();
         font-size: 22px;
         line-height: 22px;
         margin-bottom: 25px;
@@ -314,7 +322,7 @@ body {
       }
 
       .intro-heading {
-        @include script-font();
+        @include heading-font();
 
         font-weight: 700;
         font-size: 50px;
@@ -561,7 +569,7 @@ section {
             .panel {
               width: 100%;
               float: right;
-              padding: 0 20px 0 100px;
+              padding: 0 20px 0 20px;
               position: relative;
               text-align: left;
 
