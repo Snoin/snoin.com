@@ -11,13 +11,6 @@
   text-transform: uppercase;
 }
 
-@mixin background-cover() {
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-}
-
 @mixin button-variant($color, $background, $border) {
   background-color: $background;
   border-color: $border;
