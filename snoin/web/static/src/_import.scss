@@ -103,17 +103,3 @@ $fa-font-path: '~font-awesome/fonts';
     url('../fonts/nanumbarungothic-webfont.svg#nanumbarungothicotfregular') format('svg');
 
 }
-
-/* Nanum Pen Script */
-@font-face {
-  font-family: 'Nanum Pen Script';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../fonts/nanumpen-webfont.eot');
-  src:
-    url('../fonts/nanumpen-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/nanumpen-webfont.woff2') format('woff2'),
-    url('../fonts/nanumpen-webfont.woff') format('woff'),
-    url('../fonts/nanumpen-webfont.ttf') format('truetype'),
-    url('../fonts/nanumpen-webfont.svg#nanum_pen_script_otfregular') format('svg');
-}
