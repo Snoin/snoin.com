@@ -107,13 +107,15 @@ HTML
   문서만 XHTML1 Frameset으로 작성한다.
 * self-closing tag(``<br>``, ``<input>`` 등)을 XML 스타일로 닫는
   것(``<br />``)은 금지한다.
+* ``class`` 속성의 작명은 `BEM`_ 규칙을 따른다
 * indentation으로는 space 2글자를 사용한다.
 
+.. _BEM: https://css-tricks.com/bem-101/
 
 JavaScript
 ----------
 * `Airbnb JavaScript Style Guide`_를 준수한다.
-* `eslint`_를 사용하여 문법 준수 여부를 검사한다.
+* `eslint`_를 사용하여 컨벤션 준수 여부를 검사한다.
 * jsx를 사용하는 경우, 자식 요소가 없는 태그는 XML 스타일로 닫는다. (``<MyApp />``)
 * 개발이 사실상 중지된 bower, grunt는 사용하지 않는다.
 * 코드 컴파일시 sourcemap을 만든다.
@@ -124,43 +126,15 @@ JavaScript
 
 SCSS (CSS)
 ----------
-* ``;``\를 생략하는 것은 금지한다.
-* indentation으로는 space 2글자를 사용한다.
-* 1줄에 1개의 속성만 지정한다.
-* 속성명을 오름차순(a-z)순으로 정렬한다. 단, vendor prefix가 필요한 속성의 경우
-  예외적으로 prefix가 없는 속성 아래에 배치한다.
-* 인자 배열은 ``@extend`` → ``@include`` → 속성 → media query →
-  자기 변형(``&`` 연산자) → 직계 자손(자식) → 자손 순으로 하며, 각각의 사이에
-  빈 줄을 한 개 둔다.
-
-   .. code-block:: scss
-
-      ul {
-        @extend .row;
-
-        @include zebra();
-
-        width: 50px;
-
-        @media (min-width: 1000px) {
-          width: 150px;
-        }
-
-        &:hover {
-          background: #aaa;
-        }
-
-        > li {
-          margin: 0;
-        }
-
-        a {
-          color: red;
-        }
-      }
-
+* 기본적으로 `stylelint-config-standard`_를 준수한다.
+* `stylelint`_를 사용하여 컨벤션 준수 여부를 검사한다.
+* 모든 속성은 알파벳 순으로 정렬한다.
+* ID selector(``#id``)는 사용하지 않는다.
 * 확장자는 ``.scss``\로 통일한다.
-* 코드 컴파일시 sourcemap을 만든다.
+* 개발환경에서는 코드 빌드시 sourcemap을 만든다.
+
+.. _stylelint-config-standard: https://github.com/stylelint/stylelint-config-standard/
+.. _stylelint: http://stylelint.io/
 
 
 Git

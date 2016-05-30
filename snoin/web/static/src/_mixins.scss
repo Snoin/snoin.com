@@ -2,10 +2,6 @@
   font-family: 'Nanum Myeongjo', serif;
 }
 
-@mixin script-font() {
-  font-family: 'Nanum Pen Script', cursive;
-}
-
 @mixin body-font() {
   font-family: "Roboto Slab", 'Nanum Barun Gothic', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -15,26 +11,19 @@
   text-transform: uppercase;
 }
 
-@mixin background-cover() {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-
 @mixin button-variant($color, $background, $border) {
-  color: $color;
   background-color: $background;
   border-color: $border;
+  color: $color;
 
   &:hover,
   &:focus,
   &:active,
   &.active,
   .open .dropdown-toggle & {
-    color: $color;
     background-color: darken($background, 10%);
     border-color: darken($border, 12%);
+    color: $color;
   }
   &:active,
   &.active,
@@ -55,7 +44,7 @@
   }
 
   .badge {
-    color: $background;
     background-color: $color;
+    color: $background;
   }
 }
