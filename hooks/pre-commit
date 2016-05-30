@@ -12,3 +12,4 @@ else
     echo "Don't check import order with this python version."
 fi
 npm run lint
+npm run stylelint
