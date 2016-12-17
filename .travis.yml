@@ -23,8 +23,6 @@ script:
 - [ $TRAVIS_PYTHON_VERSION = '3.5' ] && import-order snoin ./snoin ./tests
 - yarn run lint-js
 - yarn run lint-style
-after_success:
-- bash deploy/deploy.sh
 notifications:
   irc:
     channels:
