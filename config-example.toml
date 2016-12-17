@@ -1,0 +1,9 @@
+DEBUG = true
+SNOIN_CONFIG = true
+
+SMTP_ID = 'ID'
+SMTP_PASSWORD = 'PASSWORD'
+
+[[MAIL_LISTENERS]]
+name = '이름'
+email = 'no-reply@snoin.com'

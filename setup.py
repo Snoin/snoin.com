@@ -7,6 +7,8 @@ install_requires = {
     'Click >= 6.6',
     # API
     'requests >= 2.12.4',
+    # Config
+    'toml >= 0.9.2',
 }
 
 tests_require = {
