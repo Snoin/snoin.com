@@ -25,11 +25,13 @@
     border-color: darken($border, 12%);
     color: $color;
   }
+
   &:active,
   &.active,
   .open .dropdown-toggle & {
     background-image: none;
   }
+
   &.disabled,
   &[disabled],
   fieldset[disabled] & {

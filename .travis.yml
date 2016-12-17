@@ -4,26 +4,25 @@ python:
 addon:
   firefox: latest
 sudo: false
+before_install:
+- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install stable && nvm use stable
+- curl -o- -L https://yarnpkg.com/install.sh | bash
+- export PATH=$HOME/.yarn/bin:$PATH
 install:
-- rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
-- npm set progress=false
-- npm install -g npm
+- yarn
 - pip install -e .[tests]
-- npm install
 before_script:
 - export DISPLAY=:99.0
 - bash -e /etc/init.d/xvfb start
 script:
 - py.test tests
-- npm run build
-- npm run test-karma-ci
-# check static files
-- file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv.min.js
-- file snoin/web/static/dist/node_modules/html5shiv/dist/html5shiv-printshiv.min.js
-- file snoin/web/static/dist/node_modules/respond.js/dest/respond.min.js
-- file snoin/web/static/dist/node_modules/respond.js/dest/respond.matchmedia.addListener.min.js
+- yarn run build-product
+- yarn run test-karma-ci
 # lint
-- bash hooks/pre-commit
+- flake8 ./snoin ./tests
+- import-order snoin ./snoin ./tests
+- yarn run lint-js
+- yarn run lint-style
 after_success:
 - bash deploy/deploy.sh
 notifications:
@@ -34,7 +33,6 @@ notifications:
     on_failure: always
 env:
   global:
-  - TRAVIS_NODE_VERSION="5"
   # DEPLOY_ADDR
   - secure: VKKKlXwKaiJZFSOaG9jVEhVD/y3GhJYt81R0jRdIkW9JSe16Uwm0jqTRyCyFfnnOM4/ELxaDh12ubOWb76jLT7kPK3P5kI3pf8ufNlW+uFqL1CfTGCN0Z3/koVPb9CiNdwyDALZS5YAIp8QerguIjGle9D5j9EeP2TV2wTM8OeLpkDyKsOQp6iB3i9e7qa69eJKaJ+SdJs38gUOYS4TfyXiFxL718zzKlDrdeGwNpvg7QzFvGOvyWn5qC1KS9T3lszXdFejlAB8APICAAlUTQ44M2XM0ux/SJ0V7TZ7T0qahiTyoVj0DX9Xqg5ypabktimh912syPZapbVMa22he2H3fbu4vsGRqdVWiG0L9umQmgOYpArVae4u7jUzWMQ32FPrOPAHGIh+iQWzu7s8fQTND5If5buhcaxXcjn8Ah+ffHngn3VwzhJbTnnfGLzccJCbW7MBL4CfGWGTIZ9G+73nIWrKZTs8ASGe7kA7rQgHzYxD3Ij/ilPhASj1wh45oDjntsKlz9dMXRCzG+ILFVA9q8usKeJI50WjtQ+eojOTrfPBUP00w8CxI1pwB7rwgw4MsBz4Oe5heBWZusSbXeQhCDzhND6Bi0h6QCW0c/g/4qdhnWxKTFdCWlMDKr85lWPisnu0Lo0y8EyYTfMIqJbkeBeoRdMEFRmc98j8XcGs=
   # DEPLOY_PORT

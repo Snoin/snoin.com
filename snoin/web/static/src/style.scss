@@ -213,6 +213,7 @@ h6 {
 
 .menu__logo_link {
   @extend .navbar-brand;
+
   padding: 0;
 }
 
@@ -241,7 +242,6 @@ h6 {
   @extend .navbar-collapse;
 
   border-color: opacify(white, 0.02);
-
 }
 
 .menu__list {
@@ -372,12 +372,13 @@ h2 {
 
 h3 {
   @extend %text-muted;
-  @include serif-font();
 
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 75px;
   text-transform: none;
+
+  @include serif-font();
 }
 
 /***
@@ -750,6 +751,7 @@ h3 {
     max-width: 500px;
     padding: 1em;
   }
+
   label.checked {
     background: lighten($brand-primary, 10%);
   }
@@ -873,9 +875,10 @@ textarea.contact__form_control {
 
 .footer__links {
   @extend .list-inline;
-  @include heading-font();
 
   line-height: 40px;
   margin-bottom: 0;
   text-transform: none;
+
+  @include heading-font();
 }
