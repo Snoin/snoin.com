@@ -1,7 +1,7 @@
 language: python
 python:
 - 3.5
-addon:
+addons:
   firefox: latest
 sudo: false
 before_install:
@@ -20,7 +20,7 @@ script:
 - yarn run test-karma-ci
 # lint
 - flake8 ./snoin ./tests
-- [ $TRAVIS_PYTHON_VERSION = '3.5' ] && import-order snoin ./snoin ./tests
+- '[ $TRAVIS_PYTHON_VERSION = "3.5" ] && import-order snoin ./snoin ./tests'
 - yarn run lint-js
 - yarn run lint-style
 notifications:
