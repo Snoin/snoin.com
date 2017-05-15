@@ -1,6 +1,6 @@
-from email.headerregistry import Address
 import pathlib
 import sys
+from email.headerregistry import Address
 
 import toml
 

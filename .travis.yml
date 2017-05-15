@@ -1,6 +1,7 @@
 language: python
 python:
 - 3.5
+- 3.6
 addons:
   firefox: latest
 sudo: false
@@ -19,8 +20,8 @@ script:
 - yarn run build-product
 - yarn run test-karma-ci
 # lint
-- flake8 ./snoin ./tests
-- '[ $TRAVIS_PYTHON_VERSION = "3.5" ] && import-order snoin ./snoin ./tests'
+- flake8 --ignore I100.I101,I201 ./snoin ./tests
+- '[ $TRAVIS_PYTHON_VERSION = "3.6" ] && flake8 --select I100.I101,I201 ./snoin ./tests'
 - yarn run lint-js
 - yarn run lint-style
 - gixy deploy/nginx.conf

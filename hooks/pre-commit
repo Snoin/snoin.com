@@ -2,7 +2,6 @@
 set -e
 if git diff --cached --name-only | grep "\.py$" > /dev/null; then
     flake8 ./snoin ./tests
-    import-order snoin ./snoin ./tests
 fi
 if git diff --cached --name-only | grep "\.jsx\{0,1\}$" > /dev/null; then
     yarn run lint-js
