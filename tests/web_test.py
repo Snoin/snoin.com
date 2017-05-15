@@ -3,6 +3,7 @@ import json
 import smtplib
 
 from flask import url_for
+
 from snoin.web.app import app
 
 

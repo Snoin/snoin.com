@@ -28,8 +28,8 @@ Python
 * indentation으로는 space 4글자를 사용한다.
 * 불필요한 diff 발생을 막기 위해 모든 ``import``\는 알파벳 오름차순(a-z순)으로
   정렬한다. 혹시라도 있을 수 있는 실수를 방지하기 위해
-  import-order_\를 사용하여 import 순서를 강제적으로 통일한다.
-  (단, import-order_\를 사용하는 대상은 테스트 대상이 되는 버전 중
+  flake8-import-order_\를 사용하여 import 순서를 강제적으로 통일한다.
+  (단, flake8-import-order_\를 사용하는 대상은 테스트 대상이 되는 Python 버전 중
   가장 최신 버전만 해당한다)
 * 다른 Third-party 라이브러리와의 연동을 위해 docstring 외의 내용이 있는 모든
   모듈은 ``__all__`` 변수를 항상 작성한다.
@@ -98,7 +98,7 @@ Python
 
 .. _PEP-8: https://www.python.org/dev/peps/pep-0008/
 .. _flake8: https://flake8.readthedocs.org/en/latest/
-.. _import-order: https://pypi.python.org/pypi/import-order/
+.. _flake8-import-order: https://github.com/PyCQA/flake8-import-order/
 
 
 HTML
