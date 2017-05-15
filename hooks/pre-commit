@@ -2,11 +2,13 @@
 set -e
 if git diff --cached --name-only | grep "\.py$" > /dev/null; then
     flake8 ./snoin ./tests
-    import-order snoin ./snoin ./tests
 fi
 if git diff --cached --name-only | grep "\.jsx\{0,1\}$" > /dev/null; then
-    npm run lint-js
+    yarn run lint-js
 fi
 if git diff --cached --name-only | grep "\.s\{0,1\}css$" > /dev/null; then
-    npm run lint-style
+    yarn run lint-style
+fi
+if git diff --cached --name-only | grep "\.conf$" > /dev/null; then
+    gixy deploy/*.conf
 fi

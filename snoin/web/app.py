@@ -1,6 +1,6 @@
+import smtplib
 from email.headerregistry import Address
 from email.message import EmailMessage
-import smtplib
 
 from flask import Flask, jsonify, render_template, request
 
