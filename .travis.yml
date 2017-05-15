@@ -21,7 +21,7 @@ script:
 - yarn run test-karma-ci
 # lint
 - flake8 --ignore I100.I101,I201 ./snoin ./tests
-- '[ $TRAVIS_PYTHON_VERSION = "3.6" ] && flake8 --select I100.I101,I201 ./snoin ./tests'
+- '[ "$TRAVIS_PYTHON_VERSION" = "3.6" ] && flake8 --select I100.I101,I201 ./snoin ./tests || true'
 - yarn run lint-js
 - yarn run lint-style
 - gixy deploy/nginx.conf
