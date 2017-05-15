@@ -2,11 +2,11 @@ from setuptools import find_packages, setup
 
 install_requires = {
     # Web
-    'Flask >= 0.11.1',
+    'Flask >= 0.12.1',
     # CLI
-    'Click >= 6.6',
+    'Click >= 6.7',
     # API
-    'requests >= 2.12.4',
+    'requests >= 2.14.2',
     # Config
     'toml >= 0.9.2',
 }
@@ -20,7 +20,7 @@ tests_require = {
 extras_require = {
     "deploy": [
         # Deploy
-        'uwsgi >= 2.0.14',
+        'uwsgi >= 2.0.15',
     ],
     'tests': tests_require,
 }
