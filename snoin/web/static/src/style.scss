@@ -123,42 +123,42 @@ h6 {
       }
 
       span {
-        @extend .fa;
+        @extend %fa;
 
         &.bitbucket {
-          @extend .fa-bitbucket;
+          @extend %fa-bitbucket;
         }
 
         &.facebook {
-          @extend .fa-facebook;
+          @extend %fa-facebook;
         }
 
         &.github {
-          @extend .fa-github;
+          @extend %fa-github;
         }
 
         &.link {
-          @extend .fa-link;
+          @extend %fa-link;
         }
 
         &.linkedin {
-          @extend .fa-linkedin;
+          @extend %fa-linkedin;
         }
 
         &.slideshare {
-          @extend .fa-slideshare;
+          @extend %fa-slideshare;
         }
 
         &.stack-overflow {
-          @extend .fa-stack-overflow;
+          @extend %fa-stack-overflow;
         }
 
         &.twitter {
-          @extend .fa-twitter;
+          @extend %fa-twitter;
         }
 
         &.tumblr {
-          @extend .fa-tumblr;
+          @extend %fa-tumblr;
         }
       }
     }
@@ -213,6 +213,7 @@ h6 {
 
 .menu__logo_link {
   @extend .navbar-brand;
+
   padding: 0;
 }
 
@@ -241,7 +242,6 @@ h6 {
   @extend .navbar-collapse;
 
   border-color: opacify(white, 0.02);
-
 }
 
 .menu__list {
@@ -372,12 +372,13 @@ h2 {
 
 h3 {
   @extend %text-muted;
-  @include serif-font();
 
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 75px;
   text-transform: none;
+
+  @include serif-font();
 }
 
 /***
@@ -402,53 +403,53 @@ h3 {
 }
 
 .features__icon_stack {
-  @extend .fa-stack;
-  @extend .fa-4x;
+  @extend %fa-stack;
+  @extend %fa-4x;
 }
 
 .features__icon {
-  @extend .fa;
+  @extend %fa;
 }
 
 .features__icon--background {
-  @extend .fa-circle;
-  @extend .fa-stack-2x;
+  @extend %fa-circle;
+  @extend %fa-stack-2x;
   @extend %text-primary;
 }
 
 %features__icon--real_icon {
-  @extend .fa-stack-1x;
-  @extend .fa-inverse;
+  @extend %fa-stack-1x;
+  @extend %fa-inverse;
 }
 
 .features__icon--web {
   @extend %features__icon--real_icon;
-  @extend .fa-globe;
+  @extend %fa-globe;
 }
 
 .features__icon--responsive {
   @extend %features__icon--real_icon;
-  @extend .fa-arrows;
+  @extend %fa-arrows;
 }
 
 .features__icon--standard {
   @extend %features__icon--real_icon;
-  @extend .fa-html5;
+  @extend %fa-html5;
 }
 
 .features__icon--security {
   @extend %features__icon--real_icon;
-  @extend .fa-lock;
+  @extend %fa-lock;
 }
 
 .features__icon--quality {
   @extend %features__icon--real_icon;
-  @extend .fa-thumbs-o-up;
+  @extend %fa-thumbs-o-up;
 }
 
 .features__icon--consult {
   @extend %features__icon--real_icon;
-  @extend .fa-paper-plane;
+  @extend %fa-paper-plane;
 }
 
 /***
@@ -750,6 +751,7 @@ h3 {
     max-width: 500px;
     padding: 1em;
   }
+
   label.checked {
     background: lighten($brand-primary, 10%);
   }
@@ -873,9 +875,10 @@ textarea.contact__form_control {
 
 .footer__links {
   @extend .list-inline;
-  @include heading-font();
 
   line-height: 40px;
   margin-bottom: 0;
   text-transform: none;
+
+  @include heading-font();
 }

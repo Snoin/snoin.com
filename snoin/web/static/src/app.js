@@ -1,20 +1,11 @@
-/*eslint-disable */
-/* copy IE related js */
-// FIXME: Change to other solution such as cp command instead.
-import 'file-loader?name=[path][name].[ext]&context=./!html5shiv/dist/html5shiv.min.js';
-import 'file-loader?name=[path][name].[ext]&context=./!html5shiv/dist/html5shiv-printshiv.min.js';
-import 'file-loader?name=[path][name].[ext]&context=./!respond.js/dest/respond.min.js';
-import 'file-loader?name=[path][name].[ext]&context=./!respond.js/dest/respond.matchmedia.addListener.min.js';
-/*eslint-enable */
-
 /* import external deps */
 import 'jquery';
 import 'bootstrap-sass/assets/javascripts/bootstrap';
-import 'jquery-easing/jquery.easing.1.3.js';
+import 'jquery-easing/jquery.easing.1.3';
 
 /* import internal deps */
 import contact from './contact';
-
+import './style.scss';
 
 const $navbar = $('#menu');
 const $window = $(window);
@@ -106,11 +97,11 @@ $(document).ready(() => {
     target: '#menu',
   });
 
-  $window.on('hashchange', e => {
+  $window.on('hashchange', (e) => {
     e.preventDefault();
   });
 
-  $('a.page-scroll').click(e => {
+  $('a.page-scroll').click((e) => {
     const $this = $(e.currentTarget);
     e.preventDefault();
     $('html, body').stop().animate({
@@ -124,7 +115,7 @@ $(document).ready(() => {
       .removeClass('collapse in');
   });
 
-  $service.find('button').click(e => {
+  $service.find('button').click((e) => {
     const $this = $(e.currentTarget);
     $this.remove();
     $serviceForm.slideDown(3000, () => {
@@ -132,7 +123,7 @@ $(document).ready(() => {
     });
   });
 
-  $serviceFormInputs.change(e => {
+  $serviceFormInputs.change((e) => {
     const $this = $(e.currentTarget);
     const type = $this.attr('type');
     const name = $this.attr('name');
@@ -149,7 +140,7 @@ $(document).ready(() => {
   });
 
 
-  $form.submit(e => {
+  $form.submit((e) => {
     const name = $('#name').val();
     const email = $('#email').val();
     const phone = $('#phone').val();

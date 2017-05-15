@@ -2,7 +2,7 @@ import 'babel-polyfill';
 import 'whatwg-fetch';
 import FormData from 'form-data';
 
-function contact(onSuccess, onFail, name = '', email = '', phone = '', message = '') {
+export default function contact(onSuccess, onFail, name = '', email = '', phone = '', message = '') {
   const success = typeof onSuccess === 'function' ? onSuccess : console.log;
   const fail = typeof onFail === 'function' ? onFail : console.log;
 
@@ -25,23 +25,21 @@ function contact(onSuccess, onFail, name = '', email = '', phone = '', message =
   window.fetch('/contact/', {
     method: 'post',
     body: data,
-  }).then(response => {
+  }).then((response) => {
     const json = response.json()
-      .catch(error => {
+      .catch((error) => {
         fail(error);
       });
     if (response.status >= 200 && response.status < 300) {
-      return json.then(res => {
+      return json.then((res) => {
         success(res);
       });
     }
-    return json.then(res => {
+    return json.then((res) => {
       fail(res);
     });
-  }).catch(error => {
+  }).catch((error) => {
     fail(error);
   });
   return true;
 }
-
-export default contact;

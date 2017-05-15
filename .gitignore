@@ -74,7 +74,7 @@ deploy/ssh.pub
 
 ## config
 
-*.cfg.py
+*.config.toml
 
 ## gedit backup file
 *~

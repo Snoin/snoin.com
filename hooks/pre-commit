@@ -1,15 +1,12 @@
 #!/bin/bash
 set -e
-if [[ $TRAVIS_PYTHON_VERSION ]]; then
-    VERSION=$TRAVIS_PYTHON_VERSION
-else
-    VERSION=$(python3 -c 'import sys; v = sys.version_info; print("{}.{}".format(v[0], v[1]));')
+if git diff --cached --name-only | grep "\.py$" > /dev/null; then
+    flake8 ./snoin ./tests
+    import-order snoin ./snoin ./tests
 fi
-flake8 snoin tests
-if [ $VERSION = '3.5' ]; then
-    import-order snoin
-else
-    echo "Don't check import order with this python version."
+if git diff --cached --name-only | grep "\.jsx\{0,1\}$" > /dev/null; then
+    npm run lint-js
 fi
-npm run lint
-npm run stylelint
+if git diff --cached --name-only | grep "\.s\{0,1\}css$" > /dev/null; then
+    npm run lint-style
+fi

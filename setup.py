@@ -2,23 +2,25 @@ from setuptools import find_packages, setup
 
 install_requires = {
     # Web
-    'Flask >= 0.10.1',
+    'Flask >= 0.11.1',
     # CLI
-    'Click >= 5.1',
+    'Click >= 6.6',
     # API
-    'requests >= 2.8.1',
+    'requests >= 2.12.4',
+    # Config
+    'toml >= 0.9.2',
 }
 
 tests_require = {
-    'pytest >= 2.8.2',
-    'flake8 >= 2.5.0',
-    'import-order >= 0.0.6',
+    'pytest >= 3.0.5',
+    'flake8 >= 3.2.1',
+    'import-order >= 0.0.11',
 }
 
 extras_require = {
     "deploy": [
         # Deploy
-        'uwsgi >= 2.0.11.2',
+        'uwsgi >= 2.0.14',
     ],
     'tests': tests_require,
 }
@@ -27,7 +29,7 @@ setup(
     name='snoin.com',
     version='0.0.0',
     description='snoin.com website',
-    url='http://snoin.com',
+    url='https://snoin.com',
     packages=find_packages(),
     install_requires=install_requires,
     tests_require=tests_require,

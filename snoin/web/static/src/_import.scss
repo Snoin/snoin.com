@@ -1,8 +1,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-$fa-font-path: '~font-awesome/fonts';
+$fa-font-path: '~font-awesome-placeholder/fonts';
 
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-@import "~font-awesome/scss/font-awesome.scss";
+@import "~font-awesome-placeholder/scss/font-awesome-placeholder.scss";
 
 /* Montserrat */
 @font-face {
@@ -86,7 +86,6 @@ $fa-font-path: '~font-awesome/fonts';
     url('../fonts/nanummyeongjo-webfont.woff') format('woff'),
     url('../fonts/nanummyeongjo-webfont.ttf') format('truetype'),
     url('../fonts/nanummyeongjo-webfont.svg#nanummyeongjootfregular') format('svg');
-
 }
 
 /* Nanum Barun Gothic */
@@ -101,5 +100,4 @@ $fa-font-path: '~font-awesome/fonts';
     url('../fonts/nanumbarungothic-webfont.woff') format('woff'),
     url('../fonts/nanumbarungothic-webfont.ttf') format('truetype'),
     url('../fonts/nanumbarungothic-webfont.svg#nanumbarungothicotfregular') format('svg');
-
 }
