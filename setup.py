@@ -15,6 +15,7 @@ tests_require = {
     'pytest >= 3.0.5',
     'flake8 >= 3.2.1',
     'import-order >= 0.0.11',
+    'gixy >= 0.1.4',
 }
 
 extras_require = {

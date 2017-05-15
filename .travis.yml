@@ -23,6 +23,7 @@ script:
 - '[ $TRAVIS_PYTHON_VERSION = "3.5" ] && import-order snoin ./snoin ./tests'
 - yarn run lint-js
 - yarn run lint-style
+- gixy deploy/nginx.conf
 notifications:
   irc:
     channels:
