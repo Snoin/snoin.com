@@ -349,10 +349,6 @@ section {
   @media (min-width: 768px) {
     padding: 150px 0;
   }
-
-  &:nth-child(even) {
-    @extend %bg-light-gray;
-  }
 }
 
 .section__container {
@@ -455,6 +451,10 @@ h3 {
 /***
   About
 ***/
+.about {
+  @extend %bg-light-gray;
+}
+
 .about__container {
   @extend .col-lg-12;
 }
@@ -657,60 +657,6 @@ h3 {
 
   &:last-child {
     margin-bottom: 0;
-  }
-}
-
-/***
-  Team
-***/
-.team__members {
-  @extend .clearfix;
-}
-
-.team__member {
-  @extend .col-sm-4;
-}
-
-.team__member_description {
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.team__member_image {
-  @extend .img-responsive;
-  @extend .img-circle;
-
-  border: 7px solid white;
-  margin: 0 auto;
-  width: 265px;
-}
-
-.team__member_name {
-  margin-bottom: 0;
-  margin-top: 25px;
-  text-transform: none;
-}
-
-.team__member_position {
-  @extend %text-muted;
-
-  margin-top: 0;
-}
-
-.team__member_links {
-  @extend .list-inline;
-  @extend %external_links;
-}
-
-.team__footer_container {
-  @extend .col-lg-8;
-  @extend .col-lg-offset-2;
-  @extend .text-center;
-
-  p {
-    @extend %text-muted;
-
-    font-size: 16px;
   }
 }
 
