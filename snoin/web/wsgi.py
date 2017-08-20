@@ -6,7 +6,7 @@ from snoin.web.app import app
 
 __all__ = 'app', 'config', 'config_file'
 
-config_file = pathlib.Path('/home/snoin/snoin.com/deploy.config.toml')
+config_file = pathlib.Path('/home/snoinweb/snoin.com/deploy.config.toml')
 if not config_file.exists():
     print('config file is missing', file=sys.stderr)
     raise SystemExit(1)
