@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-install_requires = {
+install_requires = [
     # Web
     'Flask >= 0.12.1',
     # CLI
@@ -9,14 +9,14 @@ install_requires = {
     'requests >= 2.14.2',
     # Config
     'toml >= 0.9.2',
-}
+]
 
-tests_require = {
+tests_require = [
     'pytest >= 3.0.5',
     'flake8 >= 3.2.1',
     'flake8-import-order >= 0.12',
     'gixy >= 0.1.4',
-}
+]
 
 extras_require = {
     "deploy": [
@@ -38,7 +38,7 @@ setup(
     entry_points={
         'console_scripts': [
             'snoin-web=snoin.cli:main',
-            # TODO: place powebscr later
         ],
     }
 )
+
